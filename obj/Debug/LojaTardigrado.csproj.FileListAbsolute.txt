@@ -1,0 +1,11 @@
+C:\Users\Douglass\source\repos\LojaTardigrado\bin\Debug\LojaTardigrado.exe.config
+C:\Users\Douglass\source\repos\LojaTardigrado\bin\Debug\LojaTardigrado.exe
+C:\Users\Douglass\source\repos\LojaTardigrado\bin\Debug\LojaTardigrado.pdb
+C:\Users\Douglass\source\repos\LojaTardigrado\obj\Debug\LojaTardigrado.csproj.AssemblyReference.cache
+C:\Users\Douglass\source\repos\LojaTardigrado\obj\Debug\LojaTardigrado.Form1.resources
+C:\Users\Douglass\source\repos\LojaTardigrado\obj\Debug\LojaTardigrado.Properties.Resources.resources
+C:\Users\Douglass\source\repos\LojaTardigrado\obj\Debug\LojaTardigrado.csproj.GenerateResource.cache
+C:\Users\Douglass\source\repos\LojaTardigrado\obj\Debug\LojaTardigrado.csproj.CoreCompileInputs.cache
+C:\Users\Douglass\source\repos\LojaTardigrado\obj\Debug\LojaTardigrado.exe
+C:\Users\Douglass\source\repos\LojaTardigrado\obj\Debug\LojaTardigrado.pdb
+C:\Users\Douglass\source\repos\LojaTardigrado\obj\Debug\LojaTardigrado.Form2.resources
