@@ -9,3 +9,57 @@ C:\Users\Douglass\source\repos\LojaTardigrado\obj\Debug\LojaTardigrado.csproj.Co
 C:\Users\Douglass\source\repos\LojaTardigrado\obj\Debug\LojaTardigrado.exe
 C:\Users\Douglass\source\repos\LojaTardigrado\obj\Debug\LojaTardigrado.pdb
 C:\Users\Douglass\source\repos\LojaTardigrado\obj\Debug\LojaTardigrado.Form2.resources
+F:\Tcc-Desktop-main\bin\Debug\LojaTardigrado.exe.config
+F:\Tcc-Desktop-main\bin\Debug\LojaTardigrado.exe
+F:\Tcc-Desktop-main\bin\Debug\LojaTardigrado.pdb
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.csproj.AssemblyReference.cache
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form1.resources
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form2.resources
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form3.resources
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form4.resources
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form5.resources
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form6.resources
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form7.resources
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form8.resources
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Properties.Resources.resources
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.csproj.GenerateResource.cache
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.csproj.CoreCompileInputs.cache
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.exe
+F:\Tcc-Desktop-main\obj\Debug\LojaTardigrado.pdb
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\bin\Debug\LojaTardigrado.exe.config
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\bin\Debug\LojaTardigrado.exe
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\bin\Debug\LojaTardigrado.pdb
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.csprojAssemblyReference.cache
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form1.resources
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form2.resources
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form3.resources
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form4.resources
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form5.resources
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form6.resources
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form7.resources
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form8.resources
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Properties.Resources.resources
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.csproj.GenerateResource.cache
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.csproj.CoreCompileInputs.cache
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.exe
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.pdb
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\bin\Debug\itextsharp.dll
+C:\Users\Lab 23T\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.csproj.CopyComplete
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\bin\Debug\LojaTardigrado.exe.config
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\bin\Debug\LojaTardigrado.exe
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\bin\Debug\LojaTardigrado.pdb
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.csproj.AssemblyReference.cache
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form1.resources
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form2.resources
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form3.resources
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form4.resources
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form5.resources
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form6.resources
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form7.resources
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Form8.resources
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.Properties.Resources.resources
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.csproj.GenerateResource.cache
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.csproj.CoreCompileInputs.cache
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.csproj.CopyComplete
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.exe
+C:\Users\Douglass\Desktop\Tcc-Desktop-main\obj\Debug\LojaTardigrado.pdb

@@ -1,0 +1,13 @@
+criar produto
+editar produto
+excluir produto
+selecionar produto
+
+se o usuario excluir o produto quando o produto ja for pedido. devemos perguntar antes se produto esta na tabela pedido_produto assim negando a exclusão;
+
+
+
+
+colocar pdf
+parametros
+vmc \\grafico
