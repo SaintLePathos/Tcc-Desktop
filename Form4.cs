@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 
 namespace LojaTardigrado
@@ -17,14 +20,13 @@ namespace LojaTardigrado
     {
 
         ClasseConexao con;
-        string caminhoRelativoImagem = "";
+        List<string> caminhosLocaisImagens = new List<string>();
+
 
         public Form4()
         {
             InitializeComponent();
-
             con = new ClasseConexao();
-
             ExibirProdutos();
             ExbirFornecedor();
             CarregarTamanhos();
@@ -119,15 +121,16 @@ namespace LojaTardigrado
             txtCor.Clear();
             cmbTamanho.SelectedIndex = 0;
             cmbFornecedor.SelectedIndex = 0;
+            caminhosLocaisImagens.Clear();
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private async void btnAdicionar_Click(object sender, EventArgs e)
         {
             if (CamposValidos())
             {
-                if (string.IsNullOrEmpty(caminhoRelativoImagem))
+                if (caminhosLocaisImagens.Count == 0)
                 {
-                    MessageBox.Show("Selecione uma imagem antes de adicionar o produto.");
+                    MessageBox.Show("Selecione ao menos uma imagem antes de adicionar o produto.");
                     return;
                 }
 
@@ -156,12 +159,13 @@ namespace LojaTardigrado
                     int idFornecedor = Convert.ToInt32(dtFornecedor.Rows[0]["Id_Fornecedor"]);
 
                     SqlCommand cmdInsert = new SqlCommand(@"
-                    INSERT INTO Produto 
-                    (Id_Fornecedor, Nome_Produto, Descricao_Produto, Valor_Produto, 
-                     Tamanho_Produto, Quantidade_Produto, Tecido_Produto, Cor_Produto,Img_Produto)
-                    VALUES
-                    (@idFornecedor, @nomeProduto, @descricao, @preco, 
-                     @tamanho, @quantidade, @tecido, @cor, @imagemPath)");
+                        INSERT INTO Produto 
+                        (Id_Fornecedor, Nome_Produto, Descricao_Produto, Valor_Produto, 
+                         Tamanho_Produto, Quantidade_Produto, Tecido_Produto, Cor_Produto)
+                        VALUES
+                        (@idFornecedor, @nomeProduto, @descricao, @preco, 
+                         @tamanho, @quantidade, @tecido, @cor);
+                        SELECT SCOPE_IDENTITY();");
 
                     cmdInsert.Parameters.AddWithValue("@idFornecedor", idFornecedor);
                     cmdInsert.Parameters.AddWithValue("@nomeProduto", nomeProduto);
@@ -171,19 +175,50 @@ namespace LojaTardigrado
                     cmdInsert.Parameters.AddWithValue("@quantidade", quantidade);
                     cmdInsert.Parameters.AddWithValue("@tecido", tecido);
                     cmdInsert.Parameters.AddWithValue("@cor", cor);
-                    cmdInsert.Parameters.AddWithValue("@imagemPath", caminhoRelativoImagem);
 
-                    int resultado = con.manutencaoDB_Parametros(cmdInsert);
+                    object novoIdObj = con.executarScalar(cmdInsert);
+                    if (novoIdObj == null)
+                    {
+                        MessageBox.Show("Erro ao inserir produto.");
+                        return;
+                    }
 
-                    if (resultado > 0)
+                    int idProduto = Convert.ToInt32(novoIdObj);
+                    bool todasInseridas = true;
+
+                    for (int i = 0; i < caminhosLocaisImagens.Count; i++)
+                    {
+                        string caminhoRelativo = await EnviarImagemParaServidor(caminhosLocaisImagens[i]);
+
+                        if (!string.IsNullOrEmpty(caminhoRelativo))
+                        {
+                            SqlCommand cmdImg = new SqlCommand(@"
+                                INSERT INTO Imagem_Produto (Id_Produto, Url_ImgProduto, Ordem_ImgProduto)
+                                VALUES (@idProduto, @urlImagem, @ordem)");
+
+                            cmdImg.Parameters.AddWithValue("@idProduto", idProduto);
+                            cmdImg.Parameters.AddWithValue("@urlImagem", caminhoRelativo);
+                            cmdImg.Parameters.AddWithValue("@ordem", i);
+
+                            int imgResult = con.manutencaoDB_Parametros(cmdImg);
+                            if (imgResult <= 0)
+                                todasInseridas = false;
+                        }
+                        else
+                        {
+                            todasInseridas = false;
+                        }
+                    }
+
+                    if (todasInseridas)
                     {
                         LimparCampos();
-                        MessageBox.Show("Produto inserido com sucesso!");
+                        MessageBox.Show("Produto e imagens inseridos com sucesso!");
                         ExibirProdutos();
                     }
                     else
                     {
-                        MessageBox.Show("Erro ao inserir produto.");
+                        MessageBox.Show("Produto inserido, mas erro ao salvar uma ou mais imagens.");
                     }
                 }
                 catch (Exception ex)
@@ -195,46 +230,80 @@ namespace LojaTardigrado
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
+
 
         private void btnSelecionarImagem_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Imagens (*.jpg; *.jpeg; *.png)|*.jpg;*.jpeg;*.png";
+            ofd.Multiselect = true;
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                try
+                if (ofd.FileNames.Length > 4)
                 {
-                    string origem = ofd.FileName;
-                    string pastaWeb = @"C:\xampp\htdocs\Tcc-Web\uploads\imgProduto";
-
-                    if (!Directory.Exists(pastaWeb))
-                    {
-                        Directory.CreateDirectory(pastaWeb);
-                    }
-
-                    string nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(origem);
-                    string destino = Path.Combine(pastaWeb, nomeArquivo);
-
-                    File.Copy(origem, destino, true);
-
-                    // Salvar o caminho relativo para uso posterior no INSERT
-                    caminhoRelativoImagem = "uploads/imgProduto/" + nomeArquivo;
-
-                    // Exibir imagem no PictureBox, se quiser:
-                    //pictureBox1.ImageLocation = destino;
-
-                    MessageBox.Show("Imagem salva com sucesso.");
+                    MessageBox.Show("Selecione no máximo 4 imagens.");
+                    return;
                 }
-                catch (Exception ex)
+
+                caminhosLocaisImagens.Clear();
+                caminhosLocaisImagens.AddRange(ofd.FileNames);
+                MessageBox.Show("Imagens selecionadas. Elas serão enviadas ao adicionar o produto.");
+            }
+        }
+
+
+
+
+
+        private async Task<string> EnviarImagemParaServidor(string caminhoLocal)
+        {
+            using (var client = new HttpClient())
+            {
+                var form = new MultipartFormDataContent();
+                var conteudo = new ByteArrayContent(File.ReadAllBytes(caminhoLocal));
+
+                string extensao = Path.GetExtension(caminhoLocal).ToLower();
+                string contentType;
+
+                switch (extensao)
                 {
-                    MessageBox.Show("Erro ao copiar imagem: " + ex.Message);
+                    case ".jpg":
+                    case ".jpeg":
+                        contentType = "image/jpeg";
+                        break;
+                    case ".png":
+                        contentType = "image/png";
+                        break;
+                    default:
+                        MessageBox.Show("Tipo de imagem não suportado.");
+                        return null;
+                }
+
+                conteudo.Headers.ContentType = MediaTypeHeaderValue.Parse(contentType);
+                form.Add(conteudo, "file", Path.GetFileName(caminhoLocal));
+
+                string url = "http://192.168.0.75/Tcc-Web/Assets/php/upload.php";
+
+                HttpResponseMessage resposta = await client.PostAsync(url, form);
+                string respostaJson = await resposta.Content.ReadAsStringAsync();
+
+                if (resposta.IsSuccessStatusCode)
+                {
+                    dynamic resultado = JsonConvert.DeserializeObject(respostaJson);
+                    return (string)resultado.path;
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao enviar imagem: " + respostaJson);
+                    return null;
                 }
             }
-
         }
+
+
+
     }
 }
 

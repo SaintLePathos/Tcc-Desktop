@@ -15,7 +15,7 @@ public class ClasseConexao
 
             if (conexao.State != ConnectionState.Open)
             {
-                string strConexao = "Password=1234;Persist Security Info=True;User ID=sa;Initial Catalog=Loja_Ecommerce;Data Source=" + Environment.MachineName + "\\SQLEXPRESS";
+                string strConexao = "Password=1234;Persist Security Info=True;User ID=sa;Initial Catalog=Loja_Ecommerce;Data Source=192.168.0.75,1433 ";
                 conexao.ConnectionString = strConexao;
                 conexao.Open();
             }
@@ -105,4 +105,23 @@ public class ClasseConexao
             desconectar();
         }
     }
+
+    public object executarScalar(SqlCommand cmd)
+    {
+        try
+        {
+            cmd.Connection = conectar();
+            return cmd.ExecuteScalar();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Erro ao executar comando scalar: " + ex.Message);
+        }
+        finally
+        {
+            desconectar();
+        }
+    }
+
+
 }
