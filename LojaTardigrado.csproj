@@ -109,6 +109,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatoriopedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatoriopedido.Designer.cs">
+      <DependentUpon>Relatoriopedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorioperiodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorioperiodo.Designer.cs">
+      <DependentUpon>Relatorioperiodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorioproduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorioproduto.Designer.cs">
+      <DependentUpon>Relatorioproduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorioregiao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorioregiao.Designer.cs">
+      <DependentUpon>Relatorioregiao.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +170,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Relatoriopedido.resx">
+      <DependentUpon>Relatoriopedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorioperiodo.resx">
+      <DependentUpon>Relatorioperiodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorioproduto.resx">
+      <DependentUpon>Relatorioproduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorioregiao.resx">
+      <DependentUpon>Relatorioregiao.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
