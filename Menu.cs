@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LojaTardigrado
 {
-    public partial class Form2 : Form
+    public partial class Menu : Form
     {
-        public Form2()
+        public Menu()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace LojaTardigrado
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            Form3 pedidos = new Form3();
+            Pedidos pedidos = new Pedidos();
             pedidos.Show();
             this.Hide();
         }
@@ -86,7 +86,7 @@ namespace LojaTardigrado
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form9 fornecedor = new Form9();
+            Fornecedor fornecedor = new Fornecedor();
             fornecedor.Show();
             this.Hide();
         }

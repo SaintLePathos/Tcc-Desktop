@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace LojaTardigrado
 {
-    public partial class Form3 : Form
+    public partial class Pedidos : Form
     {
         private Dictionary<string, decimal> produtos;
         private decimal totalPedido = 0;
-        public Form3()
+        public Pedidos()
         {
             InitializeComponent();
             InicializarProdutos();
@@ -54,7 +54,7 @@ namespace LojaTardigrado
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
+            Menu f2 = new Menu();
             f2.Show();
             this.Hide();
         }

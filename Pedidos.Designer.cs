@@ -1,7 +1,7 @@
 ﻿
 namespace LojaTardigrado
 {
-    partial class Form3
+    partial class Pedidos
     {
         /// <summary>
         /// Required designer variable.

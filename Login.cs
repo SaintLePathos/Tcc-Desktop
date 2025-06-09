@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace LojaTardigrado
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
+            Menu f2 = new Menu();
             f2.Show();
             Hide();
         }
