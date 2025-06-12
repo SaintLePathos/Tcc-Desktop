@@ -36,13 +36,13 @@ namespace LojaTardigrado
                     Data_Pedido,
                     CASE 
                         WHEN Status_Pedido = 0 THEN 'Cancelado'
-                        WHEN Status_Pedido = 1 AND Data_Envio_Pedido IS NULL AND Data_Entrega_Pedido IS NULL THEN 'Processando'
+                        WHEN Status_Pedido = 1 AND Data_Envio_Pedido IS NULL AND Data_Entrega_Pedido IS NULL THEN 'Não Enviado'
                         WHEN Status_Pedido = 1 AND Data_Envio_Pedido IS NOT NULL AND Data_Entrega_Pedido IS NULL THEN 'Enviado'
                         WHEN Status_Pedido = 1 AND Data_Envio_Pedido IS NOT NULL AND Data_Entrega_Pedido IS NOT NULL THEN 'Finalizado'
                         ELSE 'Desconhecido'
                     END AS Status_Pedido_Descricao
                 FROM Pedido
-                ORDER BY Data_Pedido DESC;
+                ORDER BY Status_Pedido_Descricao DESC;
             ";
             dt = con.executarSQL(comandosql);
 
@@ -147,7 +147,7 @@ namespace LojaTardigrado
                     COALESCE(FORMAT(p.Data_Entrega_Pedido, 'dd/MM/yyyy'), 'Data não registrada') AS Data_Entrega_Pedido,
                     CASE 
                         WHEN p.Status_Pedido = 0 THEN 'Cancelado'
-                        WHEN p.Status_Pedido = 1 AND p.Data_Envio_Pedido IS NULL AND p.Data_Entrega_Pedido IS NULL THEN 'Processando'
+                        WHEN p.Status_Pedido = 1 AND p.Data_Envio_Pedido IS NULL AND p.Data_Entrega_Pedido IS NULL THEN 'Não Enviado'
                         WHEN p.Status_Pedido = 1 AND p.Data_Envio_Pedido IS NOT NULL AND p.Data_Entrega_Pedido IS NULL THEN 'Enviado'
                         WHEN p.Status_Pedido = 1 AND p.Data_Envio_Pedido IS NOT NULL AND p.Data_Entrega_Pedido IS NOT NULL THEN 'Finalizado'
                         ELSE 'Desconhecido'
@@ -203,8 +203,34 @@ namespace LojaTardigrado
         {
             if (textBox1.Text != "")
             {
-                String idp = textBox1.Text;
-                consultaid(idp);
+                try
+                {
+                    String idp = textBox1.Text;
+                    con = new ClasseConexao();
+                    String comandosql = $@"
+                        SELECT 
+                            Id_Pedido,
+                            Data_Pedido,
+                            CASE 
+                                WHEN Status_Pedido = 0 THEN 'Cancelado'
+                                WHEN Status_Pedido = 1 AND Data_Envio_Pedido IS NULL AND Data_Entrega_Pedido IS NULL THEN 'Não Enviado'
+                                WHEN Status_Pedido = 1 AND Data_Envio_Pedido IS NOT NULL AND Data_Entrega_Pedido IS NULL THEN 'Enviado'
+                                WHEN Status_Pedido = 1 AND Data_Envio_Pedido IS NOT NULL AND Data_Entrega_Pedido IS NOT NULL THEN 'Finalizado'
+                                ELSE 'Desconhecido'
+                            END AS Status_Pedido_Descricao
+                        FROM Pedido
+                        ORDER BY 
+                            CASE WHEN Id_Pedido = {idp} THEN 0 ELSE 1 END,  -- Prioriza o pedido específico
+                            Status_Pedido_Descricao DESC;
+                    ";
+                    dt = con.executarSQL(comandosql);
+                    carregamento();
+                    
+                }catch(FormatException ex)
+                {
+                    Console.WriteLine($"Erro: {ex.Message}");
+                }
+
             }
 
         }
@@ -290,10 +316,10 @@ namespace LojaTardigrado
                     p.Tamanho_Produto,
                     p.Tecido_Produto,
                     p.Cor_Produto,
-                    pp.Quantidade_Produto_Pedido,
+                    pp.Quantidade_Produto_Pedido
                 FROM Produto_Pedido pp
                 JOIN Produto p ON pp.Id_Produto = p.Id_Produto
-                WHERE pp.Id_Pedido = @Id_Pedido;
+                WHERE pp.Id_Pedido = {numped};
             ";
             dt = con.executarSQL(comandosql);
             ds.Tables.Add(dt);

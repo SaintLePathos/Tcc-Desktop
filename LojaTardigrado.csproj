@@ -66,6 +66,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logininicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logininicio.Designer.cs">
+      <DependentUpon>Logininicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,12 @@
     </Compile>
     <Compile Include="Pedidoconsulta.Designer.cs">
       <DependentUpon>Pedidoconsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidogerenciamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidogerenciamento.Designer.cs">
+      <DependentUpon>Pedidogerenciamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedidoproduto.cs">
       <SubType>Form</SubType>
@@ -159,11 +171,17 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logininicio.resx">
+      <DependentUpon>Logininicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidoconsulta.resx">
       <DependentUpon>Pedidoconsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidogerenciamento.resx">
+      <DependentUpon>Pedidogerenciamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidoproduto.resx">
       <DependentUpon>Pedidoproduto.cs</DependentUpon>

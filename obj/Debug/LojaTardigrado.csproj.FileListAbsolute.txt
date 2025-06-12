@@ -116,3 +116,5 @@ C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Pedidos.r
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Fornecedor.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Pedidoconsulta.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Pedidoproduto.resources
+C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Pedidogerenciamento.resources
+C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Logininicio.resources

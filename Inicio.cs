@@ -16,16 +16,34 @@ namespace LojaTardigrado
     {
         ClasseConexao con;
         DataTable dt;
+        private Timer meuTimer;
         public Inicio()
         {
             InitializeComponent();
+            tudo();
+            meuTimer = new Timer();
+            meuTimer.Interval = 1000; // Executar a cada 2 segundos
+            meuTimer.Tick += (s, e) => {
+                tudo();
+                // Chame outros métodos conforme necessário
+            };
+            meuTimer.Start();
+            
+        }
+        private void abrelogin()
+        {
+            Logininicio fm = new Logininicio();
+            fm.ShowDialog();
+
+        }
+        private void tudo()
+        {
             consulta();
             carregamento();
             carregachartum();
             carregachartdois();
             carregalbl();
         }
-
         private void consulta()
         {
             con = new ClasseConexao();
@@ -71,7 +89,7 @@ namespace LojaTardigrado
             // Limpar qualquer seleção que ocorra
             dataGridView1.SelectionChanged += (s, e) => dataGridView1.ClearSelection();
 
-            dataGridView1.Enabled = false;
+            //dataGridView1.Enabled = false;
 
             // Permite personalizar o grid
             dataGridView1.AutoGenerateColumns = false;
@@ -179,7 +197,7 @@ namespace LojaTardigrado
             }
             else
             {
-                MessageBox.Show("Nenhum dado encontrado para gerar o gráfico.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("Nenhum dado encontrado para gerar o gráfico.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void carregachartdois()
@@ -220,7 +238,7 @@ namespace LojaTardigrado
             }
             else
             {
-                MessageBox.Show("Nenhum dado encontrado para gerar o gráfico.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("Nenhum dado encontrado para gerar o gráfico.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void carregalbl()
@@ -268,7 +286,7 @@ namespace LojaTardigrado
             }
             else
             {
-                MessageBox.Show("Nenhum dado encontrado para gerar o gráfico.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("Nenhum dado encontrado para gerar o gráfico.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void trocaform(Form form)
@@ -303,7 +321,27 @@ namespace LojaTardigrado
 
         private void gerenciarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            trocaform(new Pedidogerenciamento());
+        }
 
+        private void cadastrarProdutoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            trocaform(new Form4());
+        }
+
+        private void cadastroDeFornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            trocaform(new Fornecedor());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            abrelogin();
         }
     }
 }
