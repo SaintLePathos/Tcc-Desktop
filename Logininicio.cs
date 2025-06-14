@@ -32,10 +32,21 @@ namespace LojaTardigrado
             if(usu == "admin" && sen == "admin")
             {
                 this.Hide();
+                Valores.cargo = "Desenvolvedor";
             }
             else
             {
-                String sql = "SELECT Usuario_Funcionario,Senha_Funcionario FROM Funcionario WHERE Usuario_Funcionario = @usuario AND Senha_Funcionario = @senha;";
+                String sql = @"
+                    SELECT 
+                    Id_Funcionario,
+                    Cargo_Funcionario,
+                    Usuario_Funcionario,
+                    Senha_Funcionario 
+                    FROM Funcionario 
+                    WHERE Usuario_Funcionario = @usuario 
+                    AND Senha_Funcionario = @senha 
+                    AND Ativo = 1;
+                    ";
                 con = new ClasseConexao();
                 SqlCommand cmd = new SqlCommand(sql);
                 cmd.Parameters.AddWithValue("@usuario", usu);
@@ -45,6 +56,8 @@ namespace LojaTardigrado
                     dt = con.exSQLParametros(cmd);
                     if(dt.Rows.Count > 0)
                     {
+                        Valores.idusuario = dt.Rows[0]["Id_Funcionario"].ToString();
+                        Valores.cargo = dt.Rows[0]["Cargo_Funcionario"].ToString();
                         this.Hide();
                     }
                     else

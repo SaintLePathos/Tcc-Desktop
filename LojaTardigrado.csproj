@@ -54,29 +54,41 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasseConexao.cs" />
+    <Compile Include="Clienteconsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clienteconsulta.Designer.cs">
+      <DependentUpon>Clienteconsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionarioatualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionarioatualizar.Designer.cs">
+      <DependentUpon>Funcionarioatualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionariocadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionariocadastro.Designer.cs">
+      <DependentUpon>Funcionariocadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionariogerenciamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionariogerenciamento.Designer.cs">
+      <DependentUpon>Funcionariogerenciamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="Logininicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Logininicio.Designer.cs">
       <DependentUpon>Logininicio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedidoconsulta.cs">
       <SubType>Form</SubType>
@@ -96,35 +108,11 @@
     <Compile Include="Pedidoproduto.Designer.cs">
       <DependentUpon>Pedidoproduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pedidos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pedidos.Designer.cs">
-      <DependentUpon>Pedidos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Produto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Produto.Designer.cs">
       <DependentUpon>Produto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form5.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form6.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form6.Designer.cs">
-      <DependentUpon>Form6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form7.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form7.Designer.cs">
-      <DependentUpon>Form7.cs</DependentUpon>
     </Compile>
     <Compile Include="Form8.cs">
       <SubType>Form</SubType>
@@ -165,17 +153,23 @@
       <DependentUpon>Relatorioregiao.cs</DependentUpon>
     </Compile>
     <Compile Include="Valores.cs" />
+    <EmbeddedResource Include="Clienteconsulta.resx">
+      <DependentUpon>Clienteconsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionarioatualizar.resx">
+      <DependentUpon>Funcionarioatualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionariocadastro.resx">
+      <DependentUpon>Funcionariocadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionariogerenciamento.resx">
+      <DependentUpon>Funcionariogerenciamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Logininicio.resx">
       <DependentUpon>Logininicio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidoconsulta.resx">
       <DependentUpon>Pedidoconsulta.cs</DependentUpon>
@@ -186,20 +180,8 @@
     <EmbeddedResource Include="Pedidoproduto.resx">
       <DependentUpon>Pedidoproduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pedidos.resx">
-      <DependentUpon>Pedidos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Produto.resx">
       <DependentUpon>Produto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
-      <DependentUpon>Form6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form7.resx">
-      <DependentUpon>Form7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form8.resx">
       <DependentUpon>Form8.cs</DependentUpon>

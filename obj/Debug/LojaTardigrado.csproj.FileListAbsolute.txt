@@ -87,9 +87,6 @@ C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.csproj.AssemblyReference.cache
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Form4.resources
-C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Form5.resources
-C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Form6.resources
-C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Form7.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Form8.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Properties.Resources.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Relatorioperiodo.resources
@@ -110,11 +107,12 @@ C:\Users\Douglas\Documents\Tcc-Desktop\obj\Debug\LojaTardigrado.Relatorioperiodo
 C:\Users\Douglas\Documents\Tcc-Desktop\obj\Debug\LojaTardigrado.Relatorioproduto.resources
 C:\Users\Douglas\Documents\Tcc-Desktop\obj\Debug\LojaTardigrado.Relatorioregiao.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Inicio.resources
-C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Login.resources
-C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Menu.resources
-C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Pedidos.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Fornecedor.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Pedidoconsulta.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Pedidoproduto.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Pedidogerenciamento.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Logininicio.resources
+C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Funcionariocadastro.resources
+C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Funcionarioatualizar.resources
+C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Funcionariogerenciamento.resources
+C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Clienteconsulta.resources
