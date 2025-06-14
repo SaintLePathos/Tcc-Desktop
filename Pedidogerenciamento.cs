@@ -250,21 +250,24 @@ namespace LojaTardigrado
 
         private void btnAtualizarped_Click(object sender, EventArgs e)
         {
-            con = new ClasseConexao();
-            string dataOriginal = maskedTextBox1.Text;
-            DateTime dataConvertida = DateTime.ParseExact(dataOriginal, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            string novaData = dataConvertida.ToString("yyyy-MM-dd");
+            if (maskedTextBox1.Text != "")
+            {
+                con = new ClasseConexao();
+                string dataOriginal = maskedTextBox1.Text;
+                DateTime dataConvertida = DateTime.ParseExact(dataOriginal, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                string novaData = dataConvertida.ToString("yyyy-MM-dd");
 
-            String sql = $@"UPDATE Pedido
+                String sql = $@"UPDATE Pedido
                 SET Data_Envio_Pedido = @data
                 WHERE Id_Pedido = @idpedido;
                 ";
-            SqlCommand cmd = new SqlCommand(sql);
-            cmd.Parameters.AddWithValue("@data", novaData);
-            cmd.Parameters.AddWithValue("@idpedido", Valores.idped);
-            con.exSQLParametros(cmd);
-            consulta();
-            carregamento();
+                SqlCommand cmd = new SqlCommand(sql);
+                cmd.Parameters.AddWithValue("@data", novaData);
+                cmd.Parameters.AddWithValue("@idpedido", Valores.idped);
+                con.exSQLParametros(cmd);
+                consulta();
+                carregamento();
+            }
         }
 
         private void btnCancelarped_Click(object sender, EventArgs e)
@@ -275,6 +278,25 @@ namespace LojaTardigrado
                 WHERE Id_Pedido = @idpedido;
                 ";
             SqlCommand cmd = new SqlCommand(sql);
+            cmd.Parameters.AddWithValue("@idpedido", Valores.idped);
+            con.exSQLParametros(cmd);
+            consulta();
+            carregamento();
+        }
+
+        private void btnFinalizarpedido_Click(object sender, EventArgs e)
+        {
+            con = new ClasseConexao();
+            string dtaparenc = DateTime.Now.ToString("dd/MM/yyyy");
+            DateTime dataConvertida = DateTime.ParseExact(dtaparenc, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            string novaData = dataConvertida.ToString("yyyy-MM-dd");
+
+            String sql = $@"UPDATE Pedido
+                SET Data_Entrega_Pedido = @data
+                WHERE Id_Pedido = @idpedido;
+                ";
+            SqlCommand cmd = new SqlCommand(sql);
+            cmd.Parameters.AddWithValue("@data", novaData);
             cmd.Parameters.AddWithValue("@idpedido", Valores.idped);
             con.exSQLParametros(cmd);
             consulta();

@@ -31,19 +31,20 @@ namespace LojaTardigrado
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.btnpreenchedata = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAtualizarped = new System.Windows.Forms.Button();
             this.btnvoltar = new System.Windows.Forms.Button();
             this.btnCancelarped = new System.Windows.Forms.Button();
+            this.btnAtualizarped = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnpreenchedata = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.btnFinalizarpedido = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -83,6 +84,43 @@ namespace LojaTardigrado
             this.panel1.Size = new System.Drawing.Size(301, 420);
             this.panel1.TabIndex = 1;
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.maskedTextBox1.Location = new System.Drawing.Point(3, 290);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(295, 20);
+            this.maskedTextBox1.TabIndex = 7;
+            // 
+            // btnpreenchedata
+            // 
+            this.btnpreenchedata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnpreenchedata.AutoSize = true;
+            this.btnpreenchedata.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnpreenchedata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnpreenchedata.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpreenchedata.ForeColor = System.Drawing.Color.White;
+            this.btnpreenchedata.Location = new System.Drawing.Point(3, 315);
+            this.btnpreenchedata.Name = "btnpreenchedata";
+            this.btnpreenchedata.Size = new System.Drawing.Size(162, 25);
+            this.btnpreenchedata.TabIndex = 6;
+            this.btnpreenchedata.Text = "Preencher Data de Envio";
+            this.btnpreenchedata.UseVisualStyleBackColor = false;
+            this.btnpreenchedata.Click += new System.EventHandler(this.btnpreenchedata_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 274);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Data de Envio:";
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -90,6 +128,7 @@ namespace LojaTardigrado
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.btnFinalizarpedido, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnvoltar, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnCancelarped, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnAtualizarped, 1, 0);
@@ -100,23 +139,6 @@ namespace LojaTardigrado
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(295, 71);
             this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // btnAtualizarped
-            // 
-            this.btnAtualizarped.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAtualizarped.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.btnAtualizarped.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarped.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizarped.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarped.Location = new System.Drawing.Point(150, 3);
-            this.btnAtualizarped.Name = "btnAtualizarped";
-            this.btnAtualizarped.Size = new System.Drawing.Size(142, 29);
-            this.btnAtualizarped.TabIndex = 2;
-            this.btnAtualizarped.Text = "Atualizar Data";
-            this.btnAtualizarped.UseVisualStyleBackColor = false;
-            this.btnAtualizarped.Click += new System.EventHandler(this.btnAtualizarped_Click);
             // 
             // btnvoltar
             // 
@@ -151,6 +173,23 @@ namespace LojaTardigrado
             this.btnCancelarped.UseVisualStyleBackColor = false;
             this.btnCancelarped.Click += new System.EventHandler(this.btnCancelarped_Click);
             // 
+            // btnAtualizarped
+            // 
+            this.btnAtualizarped.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtualizarped.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnAtualizarped.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarped.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizarped.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarped.Location = new System.Drawing.Point(150, 3);
+            this.btnAtualizarped.Name = "btnAtualizarped";
+            this.btnAtualizarped.Size = new System.Drawing.Size(142, 29);
+            this.btnAtualizarped.TabIndex = 2;
+            this.btnAtualizarped.Text = "Atualizar Data";
+            this.btnAtualizarped.UseVisualStyleBackColor = false;
+            this.btnAtualizarped.Click += new System.EventHandler(this.btnAtualizarped_Click);
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -160,7 +199,7 @@ namespace LojaTardigrado
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(10);
-            this.label1.Size = new System.Drawing.Size(295, 263);
+            this.label1.Size = new System.Drawing.Size(295, 260);
             this.label1.TabIndex = 0;
             this.label1.Text = "a\r\n\r\na\r\n\r\na\r\n\r\na\r\n\r\na\r\n\r\na\r\n\r\na\r\n\r\na\r\n\r\na\r\n\r\na";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -231,42 +270,22 @@ namespace LojaTardigrado
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // btnpreenchedata
+            // btnFinalizarpedido
             // 
-            this.btnpreenchedata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnpreenchedata.AutoSize = true;
-            this.btnpreenchedata.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.btnpreenchedata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnpreenchedata.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnpreenchedata.ForeColor = System.Drawing.Color.White;
-            this.btnpreenchedata.Location = new System.Drawing.Point(6, 315);
-            this.btnpreenchedata.Name = "btnpreenchedata";
-            this.btnpreenchedata.Size = new System.Drawing.Size(162, 25);
-            this.btnpreenchedata.TabIndex = 6;
-            this.btnpreenchedata.Text = "Preencher Data de Envio";
-            this.btnpreenchedata.UseVisualStyleBackColor = false;
-            this.btnpreenchedata.Click += new System.EventHandler(this.btnpreenchedata_Click);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 274);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Data de Envio:";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnFinalizarpedido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(6, 290);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(295, 20);
-            this.maskedTextBox1.TabIndex = 7;
+            this.btnFinalizarpedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnFinalizarpedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizarpedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizarpedido.ForeColor = System.Drawing.Color.White;
+            this.btnFinalizarpedido.Location = new System.Drawing.Point(3, 3);
+            this.btnFinalizarpedido.Name = "btnFinalizarpedido";
+            this.btnFinalizarpedido.Size = new System.Drawing.Size(141, 29);
+            this.btnFinalizarpedido.TabIndex = 3;
+            this.btnFinalizarpedido.Text = "Finalizar Pedido";
+            this.btnFinalizarpedido.UseVisualStyleBackColor = false;
+            this.btnFinalizarpedido.Click += new System.EventHandler(this.btnFinalizarpedido_Click);
             // 
             // Pedidogerenciamento
             // 
@@ -304,5 +323,6 @@ namespace LojaTardigrado
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnpreenchedata;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Button btnFinalizarpedido;
     }
 }

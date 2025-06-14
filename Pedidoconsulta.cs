@@ -122,9 +122,16 @@ namespace LojaTardigrado
             dataGridView1.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridView1.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridView1.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+            try
+            {
+                String id = dataGridView1.Rows[0].Cells[0].Value.ToString();
+                consultaid(id);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine($"Erro: {ex.Message}");
+            }
 
-            String id = dataGridView1.Rows[0].Cells[0].Value.ToString();
-            consultaid(id);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
