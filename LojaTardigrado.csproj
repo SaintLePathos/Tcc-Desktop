@@ -61,6 +61,12 @@
     <Compile Include="Clienteconsulta.Designer.cs">
       <DependentUpon>Clienteconsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="editarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editarFornecedor.Designer.cs">
+      <DependentUpon>editarFornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="editarProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     <Compile Include="Valores.cs" />
     <EmbeddedResource Include="Clienteconsulta.resx">
       <DependentUpon>Clienteconsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editarFornecedor.resx">
+      <DependentUpon>editarFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editarProduto.resx">
       <DependentUpon>editarProduto.cs</DependentUpon>

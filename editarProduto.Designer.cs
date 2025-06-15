@@ -50,6 +50,8 @@ namespace LojaTardigrado
             this.btnEditar = new System.Windows.Forms.Button();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblDesconto = new System.Windows.Forms.Label();
+            this.txtDesconto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtNomeProduto
@@ -75,10 +77,11 @@ namespace LojaTardigrado
             // 
             // txtPreco
             // 
-            this.txtPreco.Location = new System.Drawing.Point(333, 73);
+            this.txtPreco.Location = new System.Drawing.Point(46, 135);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(100, 22);
             this.txtPreco.TabIndex = 3;
+            this.txtPreco.TextChanged += new System.EventHandler(this.txtPreco_TextChanged);
             // 
             // txtQuantidade
             // 
@@ -86,10 +89,11 @@ namespace LojaTardigrado
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(100, 22);
             this.txtQuantidade.TabIndex = 4;
+            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
             // 
             // txtCor
             // 
-            this.txtCor.Location = new System.Drawing.Point(46, 135);
+            this.txtCor.Location = new System.Drawing.Point(324, 73);
             this.txtCor.Name = "txtCor";
             this.txtCor.Size = new System.Drawing.Size(100, 22);
             this.txtCor.TabIndex = 5;
@@ -100,11 +104,12 @@ namespace LojaTardigrado
             this.txtCusto.Name = "txtCusto";
             this.txtCusto.Size = new System.Drawing.Size(100, 22);
             this.txtCusto.TabIndex = 6;
+            this.txtCusto.TextChanged += new System.EventHandler(this.txtCusto_TextChanged);
             // 
             // cmbTamanho
             // 
             this.cmbTamanho.FormattingEnabled = true;
-            this.cmbTamanho.Location = new System.Drawing.Point(333, 135);
+            this.cmbTamanho.Location = new System.Drawing.Point(324, 133);
             this.cmbTamanho.Name = "cmbTamanho";
             this.cmbTamanho.Size = new System.Drawing.Size(121, 24);
             this.cmbTamanho.TabIndex = 7;
@@ -147,7 +152,7 @@ namespace LojaTardigrado
             // lblPreco
             // 
             this.lblPreco.AutoSize = true;
-            this.lblPreco.Location = new System.Drawing.Point(330, 44);
+            this.lblPreco.Location = new System.Drawing.Point(43, 106);
             this.lblPreco.Name = "lblPreco";
             this.lblPreco.Size = new System.Drawing.Size(45, 17);
             this.lblPreco.TabIndex = 12;
@@ -165,7 +170,7 @@ namespace LojaTardigrado
             // lblCor
             // 
             this.lblCor.AutoSize = true;
-            this.lblCor.Location = new System.Drawing.Point(43, 113);
+            this.lblCor.Location = new System.Drawing.Point(321, 51);
             this.lblCor.Name = "lblCor";
             this.lblCor.Size = new System.Drawing.Size(30, 17);
             this.lblCor.TabIndex = 14;
@@ -183,7 +188,7 @@ namespace LojaTardigrado
             // lblTamanho
             // 
             this.lblTamanho.AutoSize = true;
-            this.lblTamanho.Location = new System.Drawing.Point(330, 113);
+            this.lblTamanho.Location = new System.Drawing.Point(321, 111);
             this.lblTamanho.Name = "lblTamanho";
             this.lblTamanho.Size = new System.Drawing.Size(68, 17);
             this.lblTamanho.TabIndex = 16;
@@ -226,11 +231,31 @@ namespace LojaTardigrado
             this.lblCategoria.TabIndex = 20;
             this.lblCategoria.Text = "Categoria";
             // 
+            // lblDesconto
+            // 
+            this.lblDesconto.AutoSize = true;
+            this.lblDesconto.Location = new System.Drawing.Point(43, 185);
+            this.lblDesconto.Name = "lblDesconto";
+            this.lblDesconto.Size = new System.Drawing.Size(68, 17);
+            this.lblDesconto.TabIndex = 22;
+            this.lblDesconto.Text = "Desconto";
+            // 
+            // txtDesconto
+            // 
+            this.txtDesconto.Location = new System.Drawing.Point(46, 207);
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.Size = new System.Drawing.Size(100, 22);
+            this.txtDesconto.TabIndex = 21;
+            this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
+            this.txtDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesconto_KeyPress);
+            // 
             // editarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblDesconto);
+            this.Controls.Add(this.txtDesconto);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.btnEditar);
@@ -282,5 +307,7 @@ namespace LojaTardigrado
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.Label lblDesconto;
+        private System.Windows.Forms.TextBox txtDesconto;
     }
 }

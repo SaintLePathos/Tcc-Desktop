@@ -103,6 +103,7 @@ namespace LojaTardigrado
                 decimal custo = decimal.Parse(txtCusto.Text);
                 string tamanho = cmbTamanho.SelectedItem?.ToString();
                 string nomeFornecedor = cmbFornecedor.SelectedItem?.ToString();
+                int desconto = int.Parse(txtDesconto.Text);
 
                 if (string.IsNullOrEmpty(nomeProduto) || string.IsNullOrEmpty(nomeFornecedor))
                 {
@@ -130,7 +131,8 @@ namespace LojaTardigrado
                             Cor_Produto = @Cor,
                             Custo_Produto = @Custo,
                             Tamanho_Produto = @Tamanho,
-                            Id_Fornecedor = @Fornecedor
+                            Id_Fornecedor = @Fornecedor,
+                            Desconto_Produto = @Desconto    
                          WHERE ID_Produto = @ID";
 
                 SqlCommand cmd = new SqlCommand(query);
@@ -143,7 +145,9 @@ namespace LojaTardigrado
                 cmd.Parameters.AddWithValue("@Custo", custo);
                 cmd.Parameters.AddWithValue("@Tamanho", tamanho);
                 cmd.Parameters.AddWithValue("@Fornecedor", idFornecedor);
+                cmd.Parameters.AddWithValue("@Desconto", desconto);
                 cmd.Parameters.AddWithValue("@ID", idProduto);
+                
 
                 con.executarScalar(cmd);
 
@@ -156,5 +160,90 @@ namespace LojaTardigrado
             }
         }
 
+        private void txtPreco_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPreco.Text == "") return;
+
+            string texto = txtPreco.Text;
+
+            // Remove tudo que não for número
+            texto = new string(texto.Where(char.IsDigit).ToArray());
+
+            if (string.IsNullOrEmpty(texto))
+            {
+                txtPreco.Text = "";
+                return;
+            }
+
+            // Converte para decimal, divide por 100 para considerar duas casas decimais
+            decimal valor = decimal.Parse(texto) / 100;
+
+            // Formata com vírgula (ex: 1234 => 12,34)
+            txtPreco.Text = valor.ToString("N2");
+
+            // Move o cursor para o final
+            txtPreco.SelectionStart = txtPreco.Text.Length;
+        }
+
+        private void txtCusto_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCusto.Text == "") return;
+
+            string texto = txtCusto.Text;
+
+            // Remove tudo que não for número
+            texto = new string(texto.Where(char.IsDigit).ToArray());
+
+            if (string.IsNullOrEmpty(texto))
+            {
+                txtCusto.Text = "";
+                return;
+            }
+
+            // Converte para decimal, divide por 100 para considerar duas casas decimais
+            decimal valor = decimal.Parse(texto) / 100;
+
+            // Formata com vírgula (ex: 1234 => 12,34)
+            txtCusto.Text = valor.ToString("N2");
+
+            // Move o cursor para o final
+            txtCusto.SelectionStart = txtCusto.Text.Length;
+        }
+
+        private void txtQuantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir só números e tecla backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // bloqueia o caractere
+            }
+        }
+
+        private void txtDesconto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir só números e tecla backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // bloqueia o caractere
+            }
+        }
+
+        private void txtDesconto_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtDesconto.Text, out int value))
+            {
+                if (value < 0 || value > 100)
+                {
+                    MessageBox.Show("Valor deve ser entre 0 e 100.");
+                    txtDesconto.Text = "";
+                }
+            }
+            else if (!string.IsNullOrEmpty(txtDesconto.Text))
+            {
+                MessageBox.Show("Insira um número válido.");
+                txtDesconto.Text = "";
+            }
+        }
     }
-}
+    }
+

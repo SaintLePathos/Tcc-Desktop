@@ -177,14 +177,16 @@ namespace LojaTardigrado
 
                     int idFornecedor = Convert.ToInt32(dtFornecedor.Rows[0]["Id_Fornecedor"]);
 
-                    SqlCommand cmdInsert = new SqlCommand(@"
-                                 INSERT INTO Produto 
-            (Id_Fornecedor, Nome_Produto, Descricao_Produto, Valor_Produto, 
-             Tamanho_Produto, Quantidade_Produto, Tecido_Produto, Cor_Produto, Custo_Produto)
-            VALUES
-            (@idFornecedor, @nomeProduto, @descricao, @preco, 
-              @tamanho, @quantidade, @tecido, @cor, @custo);
-            ");
+                SqlCommand cmdInsert = new SqlCommand(@"
+                    INSERT INTO Produto 
+                    (Id_Fornecedor, Nome_Produto, Descricao_Produto, Valor_Produto, 
+                     Tamanho_Produto, Quantidade_Produto, Tecido_Produto, Cor_Produto, Custo_Produto)
+                    OUTPUT INSERTED.Id_Produto
+                    VALUES
+                    (@idFornecedor, @nomeProduto, @descricao, @preco, 
+                     @tamanho, @quantidade, @tecido, @cor, @custo);
+                ");
+
 
                     cmdInsert.Parameters.AddWithValue("@idFornecedor", idFornecedor);
                     cmdInsert.Parameters.AddWithValue("@nomeProduto", nomeProduto);
@@ -489,7 +491,10 @@ namespace LojaTardigrado
             txtCusto.SelectionStart = txtCusto.Text.Length;
         }
 
-      
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

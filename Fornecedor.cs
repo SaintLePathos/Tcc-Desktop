@@ -91,6 +91,27 @@ namespace LojaTardigrado
             }
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvFornecedores.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um fornecedor para editar.");
+                return;
+            }
 
+            DataGridViewRow row = dgvFornecedores.SelectedRows[0];
+
+            int id = Convert.ToInt32(row.Cells["Id_Fornecedor"].Value);
+            string nome = row.Cells["Nome_Fornecedor"].ToString();
+            string email = row.Cells["Email_Fornecedor"].ToString();
+            string telefone = row.Cells["Telefone_Fornecedor"].ToString();
+            // CNPJ é ignorado
+
+            editarFornecedor formEditar = new editarFornecedor(id, nome, email, telefone);
+            formEditar.ShowDialog();
+
+            // Após edição, recarregue os dados se necessário
+            CarregarFornecedores(); // ou outro método que atualize o DataGridView
+        }
     }
 }
