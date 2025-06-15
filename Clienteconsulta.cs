@@ -199,39 +199,51 @@ namespace LojaTardigrado
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            if (txtbPesquisar.Text != "")
+            if (!string.IsNullOrWhiteSpace(txtbPesquisar.Text))
             {
                 try
                 {
-                    String idp = txtbPesquisar.Text;
+                    string cpfPesquisa = txtbPesquisar.Text.Trim();
                     con = new ClasseConexao();
-                    String comandosql = $@"
-                        SELECT 
-                            Id_Cliente,
-                            CPF_Cliente,
-                            Nome_Cliente,
-                            Email_Cliente,
-                            CASE 
-                                WHEN Conta_Ativa = 1 THEN 'Ativado'
-                                WHEN Conta_Ativa = 0 THEN 'Desativado'
-                                ELSE 'Desconhecido' -- caso haja algum valor inesperado
-                            END AS Status_Conta
-                        FROM Cliente
-                        ORDER BY 
-                            CASE WHEN Id_Cliente = {idp} THEN 0 ELSE 1 END, 
-                            Id_Cliente DESC;
-                    ";
+
+                    string comandosql = $@"
+                SELECT 
+                    Id_Cliente,
+                    CPF_Cliente,
+                    Nome_Cliente,
+                    Email_Cliente,
+                    CASE 
+                        WHEN Conta_Ativa = 1 THEN 'Ativado'
+                        WHEN Conta_Ativa = 0 THEN 'Desativado'
+                        ELSE 'Desconhecido'
+                    END AS Status_Conta
+                FROM Cliente
+                WHERE CPF_Cliente LIKE '{cpfPesquisa}%'
+                ORDER BY Id_Cliente DESC;
+            ";
+
                     dt = con.executarSQL(comandosql);
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Nenhum cliente encontrado com esse CPF.", "Pesquisa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return; // Não chama carregamento se não houver resultados
+                    }
+
                     carregamento();
-
                 }
-                catch (FormatException ex)
+                catch (Exception ex)
                 {
-                    Console.WriteLine($"Erro: {ex.Message}");
+                    MessageBox.Show("Erro ao pesquisar: " + ex.Message);
                 }
-
+            }
+            else
+            {
+                MessageBox.Show("Digite um CPF para pesquisar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+
 
         private void btnDesativar_Click(object sender, EventArgs e)
         {
@@ -274,5 +286,20 @@ namespace LojaTardigrado
                 Console.WriteLine($"Erro: {ex.Message}");
             }
         }
+
+        private void btnvoltar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtbPesquisar.Clear(); // Limpa o campo de pesquisa (opcional)
+                consulta();            // Recarrega todos os dados da tabela
+                carregamento();        // Atualiza o DataGridView
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao voltar para a visualização padrão: " + ex.Message);
+            }
+        }
+
     }
 }

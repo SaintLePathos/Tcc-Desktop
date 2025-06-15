@@ -15,7 +15,7 @@ public class ClasseConexao
 
             if (conexao.State != ConnectionState.Open)
             {
-                string strConexao = "Password=1234;Persist Security Info=True;User ID=sa;Initial Catalog=Loja_Ecommerce;Data Source=10.0.0.170,1433 ";
+                string strConexao = "Password=1234;Persist Security Info=True;User ID=sa;Initial Catalog=Loja_Ecommerce;Data Source=192.168.0.75,1433 ";
                 conexao.ConnectionString = strConexao;
                 conexao.Open();
             }

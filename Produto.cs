@@ -14,10 +14,12 @@ using System.Net.Http.Headers;
 using Newtonsoft.Json;
 
 
+
 namespace LojaTardigrado
 {
     public partial class Form4 : Form
     {
+        
 
         ClasseConexao con;
         List<string> caminhosLocaisImagens = new List<string>();
@@ -29,17 +31,39 @@ namespace LojaTardigrado
             con = new ClasseConexao();
             ExibirProdutos();
             ExbirFornecedor();
-            CarregarTamanhos();
+          
+            CarregarCategorias();
 
 
         }
-
-        private void CarregarTamanhos()
+        private void CarregarCategorias()
         {
-            string[] tamanhos = { "PP", "P", "M", "G", "GG" };
-            cmbTamanho.Items.AddRange(tamanhos);
-            cmbTamanho.SelectedIndex = 0;
+            cmbCategoria.Items.Clear();
+            cmbCategoria.Items.AddRange(new string[] { "Camisa", "Calça", "Tênis" });
+            cmbCategoria.SelectedIndex = 0; // Padrão: Camisa
         }
+
+
+       
+
+        private Dictionary<string, string[]> tamanhosPorCategoria = new Dictionary<string, string[]>
+{
+    { "Camisa", new[] { "PP", "P", "M", "G", "GG" } },
+    { "Calça", new[] { "36", "38", "40", "42", "44", "46" } },
+    { "Tênis", new[] { "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44" } }
+};
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string categoriaSelecionada = cmbCategoria.SelectedItem.ToString();
+
+            if (tamanhosPorCategoria.TryGetValue(categoriaSelecionada, out string[] tamanhos))
+            {
+                cmbTamanho.Items.Clear();
+                cmbTamanho.Items.AddRange(tamanhos);
+                cmbTamanho.SelectedIndex = 0;
+            }
+        }
+
         private void ExibirProdutos()
         {
 
@@ -78,25 +102,7 @@ namespace LojaTardigrado
             }
         }
 
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void txtDescricao_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private bool CamposValidos()
         {
@@ -106,6 +112,7 @@ namespace LojaTardigrado
                    !string.IsNullOrWhiteSpace(txtQuantidade.Text) &&
                    !string.IsNullOrWhiteSpace(txtTecido.Text) &&
                    !string.IsNullOrWhiteSpace(txtCor.Text) &&
+                   !string.IsNullOrWhiteSpace(txtCusto.Text) &&
                    cmbTamanho.SelectedIndex >= 0 &&
                    cmbFornecedor.SelectedIndex >= 0;
         }
@@ -113,6 +120,7 @@ namespace LojaTardigrado
         {
             txtNomeProduto.Clear();
             txtDescricao.Clear();
+            txtCusto.Clear();
             txtPreco.Clear();
             txtQuantidade.Clear();
             txtTecido.Clear();
@@ -120,6 +128,18 @@ namespace LojaTardigrado
             cmbTamanho.SelectedIndex = 0;
             cmbFornecedor.SelectedIndex = 0;
             caminhosLocaisImagens.Clear();
+        }
+
+        private string BuscarNomeFornecedorPorId(int idFornecedor)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT Nome_Fornecedor FROM Fornecedor WHERE Id_Fornecedor = @id");
+            cmd.Parameters.AddWithValue("@id", idFornecedor);
+            DataTable dt = con.exSQLParametros(cmd);
+
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0]["Nome_Fornecedor"].ToString();
+
+            return string.Empty;
         }
 
         private async void btnAdicionar_Click(object sender, EventArgs e)
@@ -142,6 +162,7 @@ namespace LojaTardigrado
                     string cor = txtCor.Text.Trim();
                     string tamanho = cmbTamanho.Text;
                     string nomeFornecedor = cmbFornecedor.Text;
+                    decimal custo = decimal.Parse(txtCusto.Text);
 
                     SqlCommand cmdSelect = new SqlCommand("SELECT Id_Fornecedor FROM Fornecedor WHERE Nome_Fornecedor = @nome");
                     cmdSelect.Parameters.AddWithValue("@nome", nomeFornecedor);
@@ -157,13 +178,13 @@ namespace LojaTardigrado
                     int idFornecedor = Convert.ToInt32(dtFornecedor.Rows[0]["Id_Fornecedor"]);
 
                     SqlCommand cmdInsert = new SqlCommand(@"
-                        INSERT INTO Produto 
-                        (Id_Fornecedor, Nome_Produto, Descricao_Produto, Valor_Produto, 
-                         Tamanho_Produto, Quantidade_Produto, Tecido_Produto, Cor_Produto)
-                        VALUES
-                        (@idFornecedor, @nomeProduto, @descricao, @preco, 
-                         @tamanho, @quantidade, @tecido, @cor);
-                        SELECT SCOPE_IDENTITY();");
+                                 INSERT INTO Produto 
+            (Id_Fornecedor, Nome_Produto, Descricao_Produto, Valor_Produto, 
+             Tamanho_Produto, Quantidade_Produto, Tecido_Produto, Cor_Produto, Custo_Produto)
+            VALUES
+            (@idFornecedor, @nomeProduto, @descricao, @preco, 
+              @tamanho, @quantidade, @tecido, @cor, @custo);
+            ");
 
                     cmdInsert.Parameters.AddWithValue("@idFornecedor", idFornecedor);
                     cmdInsert.Parameters.AddWithValue("@nomeProduto", nomeProduto);
@@ -173,6 +194,9 @@ namespace LojaTardigrado
                     cmdInsert.Parameters.AddWithValue("@quantidade", quantidade);
                     cmdInsert.Parameters.AddWithValue("@tecido", tecido);
                     cmdInsert.Parameters.AddWithValue("@cor", cor);
+                    cmdInsert.Parameters.AddWithValue("@custo", custo);
+                    
+
 
                     object novoIdObj = con.executarScalar(cmdInsert);
                     if (novoIdObj == null)
@@ -282,7 +306,7 @@ namespace LojaTardigrado
                 conteudo.Headers.ContentType = MediaTypeHeaderValue.Parse(contentType);
                 form.Add(conteudo, "file", Path.GetFileName(caminhoLocal));
 
-                string url = "http://10.0.0.170/a1/Tcc-Web/Assets/php/upload.php";
+                string url = "http://192.168.0.75/Tcc-Web/Assets/php/upload.php";
 
                 HttpResponseMessage resposta = await client.PostAsync(url, form);
                 string respostaJson = await resposta.Content.ReadAsStringAsync();
@@ -300,8 +324,172 @@ namespace LojaTardigrado
             }
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um produto para editar.");
+                return;
+            }
+
+            DataGridViewRow linha = dataGridView1.SelectedRows[0];
+
+            int idProduto = Convert.ToInt32(linha.Cells["Id_Produto"].Value);
+            string nomeProduto = linha.Cells["Nome_Produto"].Value.ToString();
+            string descricao = linha.Cells["Descricao_Produto"].Value.ToString();
+            decimal preco = Convert.ToDecimal(linha.Cells["Valor_Produto"].Value);
+            int quantidade = Convert.ToInt32(linha.Cells["Quantidade_Produto"].Value);
+            string tecido = linha.Cells["Tecido_Produto"].Value.ToString();
+            string cor = linha.Cells["Cor_Produto"].Value.ToString();
+            decimal custo = Convert.ToDecimal(linha.Cells["Custo_Produto"].Value);
+            string tamanho = linha.Cells["Tamanho_Produto"].Value.ToString();
+
+            // Buscar nome do fornecedor (se só tiver Id no grid)
+            int idFornecedor = Convert.ToInt32(linha.Cells["Id_Fornecedor"].Value);
+            string fornecedor = BuscarNomeFornecedorPorId(idFornecedor);
+
+            editarProduto formEditar = new editarProduto(idProduto, nomeProduto, descricao, preco, quantidade, tecido, cor, custo, tamanho, fornecedor);
+            formEditar.ShowDialog();
+
+            // Depois que fechar o formEditar, atualize a lista:
+            ExibirProdutos();
 
 
+        }
+
+
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um produto para excluir.");
+                return;
+            }
+
+            try
+            {
+                int idProduto = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id_Produto"].Value);
+
+                // 1. Verifica se o produto está em Produto_Pedido
+                SqlCommand cmdCheckPedido = new SqlCommand("SELECT COUNT(*) FROM Produto_Pedido WHERE Id_Produto = @id");
+                cmdCheckPedido.Parameters.AddWithValue("@id", idProduto);
+                object pedidos = con.executarScalar(cmdCheckPedido);
+
+                if (Convert.ToInt32(pedidos) > 0)
+                {
+                    MessageBox.Show("Este produto está vinculado a um pedido e não pode ser excluído.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // 2. Verifica se a quantidade é maior que 0
+                SqlCommand cmdCheckQuantidade = new SqlCommand("SELECT Quantidade_Produto FROM Produto WHERE Id_Produto = @id");
+                cmdCheckQuantidade.Parameters.AddWithValue("@id", idProduto);
+                object quantidadeObj = con.executarScalar(cmdCheckQuantidade);
+
+                if (quantidadeObj != null && Convert.ToInt32(quantidadeObj) > 0)
+                {
+                    MessageBox.Show("A quantidade deste produto ainda é maior que 0. Reduza a quantidade antes de excluí-lo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // 3. Confirma exclusão
+                DialogResult confirm = MessageBox.Show("Deseja realmente excluir este produto?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm != DialogResult.Yes)
+                    return;
+
+                // 4. Exclui imagens associadas primeiro (para respeitar a FK)
+                SqlCommand cmdDeleteImgs = new SqlCommand("DELETE FROM Imagem_Produto WHERE Id_Produto = @id");
+                cmdDeleteImgs.Parameters.AddWithValue("@id", idProduto);
+                con.manutencaoDB_Parametros(cmdDeleteImgs);
+
+                // 5. Exclui o produto
+                SqlCommand cmdDeleteProduto = new SqlCommand("DELETE FROM Produto WHERE Id_Produto = @id");
+                cmdDeleteProduto.Parameters.AddWithValue("@id", idProduto);
+                int linhasAfetadas = con.manutencaoDB_Parametros(cmdDeleteProduto);
+
+                if (linhasAfetadas > 0)
+                {
+                    MessageBox.Show("Produto excluído com sucesso.");
+                    ExibirProdutos();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao excluir produto.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtQuantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir só números e tecla backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // bloqueia o caractere
+            }
+        }
+
+
+        private void txtPreco_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPreco.Text == "") return;
+
+            string texto = txtPreco.Text;
+
+            // Remove tudo que não for número
+            texto = new string(texto.Where(char.IsDigit).ToArray());
+
+            if (string.IsNullOrEmpty(texto))
+            {
+                txtPreco.Text = "";
+                return;
+            }
+
+            // Converte para decimal, divide por 100 para considerar duas casas decimais
+            decimal valor = decimal.Parse(texto) / 100;
+
+            // Formata com vírgula (ex: 1234 => 12,34)
+            txtPreco.Text = valor.ToString("N2");
+
+            // Move o cursor para o final
+            txtPreco.SelectionStart = txtPreco.Text.Length;
+        }
+
+        private void txtCusto_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCusto.Text == "") return;
+
+            string texto = txtCusto.Text;
+
+            // Remove tudo que não for número
+            texto = new string(texto.Where(char.IsDigit).ToArray());
+
+            if (string.IsNullOrEmpty(texto))
+            {
+                txtCusto.Text = "";
+                return;
+            }
+
+            // Converte para decimal, divide por 100 para considerar duas casas decimais
+            decimal valor = decimal.Parse(texto) / 100;
+
+            // Formata com vírgula (ex: 1234 => 12,34)
+            txtCusto.Text = valor.ToString("N2");
+
+            // Move o cursor para o final
+            txtCusto.SelectionStart = txtCusto.Text.Length;
+        }
+
+      
     }
 }
 

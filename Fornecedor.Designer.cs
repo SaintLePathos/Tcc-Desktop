@@ -41,6 +41,7 @@ namespace LojaTardigrado
             this.lblTelefone = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dgvFornecedores = new System.Windows.Forms.DataGridView();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,12 +150,26 @@ namespace LojaTardigrado
             this.dgvFornecedores.Size = new System.Drawing.Size(625, 179);
             this.dgvFornecedores.TabIndex = 0;
             // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.Black;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(71, 538);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(200, 50);
+            this.btnEditar.TabIndex = 10;
+            this.btnEditar.Text = "Editar ";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            // 
             // Fornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(800, 611);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvFornecedores);
             this.Controls.Add(this.lblITitulo);
             this.Controls.Add(this.lblCNPJ);
@@ -189,5 +204,6 @@ namespace LojaTardigrado
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.DataGridView dgvFornecedores;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

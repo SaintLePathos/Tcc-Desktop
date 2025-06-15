@@ -36,6 +36,7 @@
     <Reference Include="itextsharp">
       <HintPath>E:\DS II Rubens\Prova23_05\Prova23_05\bin\Debug\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -59,6 +60,12 @@
     </Compile>
     <Compile Include="Clienteconsulta.Designer.cs">
       <DependentUpon>Clienteconsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editarProduto.Designer.cs">
+      <DependentUpon>editarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcionarioatualizar.cs">
       <SubType>Form</SubType>
@@ -114,12 +121,6 @@
     <Compile Include="Produto.Designer.cs">
       <DependentUpon>Produto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form8.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form8.Designer.cs">
-      <DependentUpon>Form8.cs</DependentUpon>
-    </Compile>
     <Compile Include="Fornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +157,9 @@
     <EmbeddedResource Include="Clienteconsulta.resx">
       <DependentUpon>Clienteconsulta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="editarProduto.resx">
+      <DependentUpon>editarProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Funcionarioatualizar.resx">
       <DependentUpon>Funcionarioatualizar.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,9 +186,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produto.resx">
       <DependentUpon>Produto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form8.resx">
-      <DependentUpon>Form8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fornecedor.resx">
       <DependentUpon>Fornecedor.cs</DependentUpon>
