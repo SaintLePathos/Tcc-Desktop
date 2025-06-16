@@ -102,10 +102,9 @@ namespace LojaTardigrado
             DataGridViewRow row = dgvFornecedores.SelectedRows[0];
 
             int id = Convert.ToInt32(row.Cells["Id_Fornecedor"].Value);
-            string nome = row.Cells["Nome_Fornecedor"].ToString();
-            string email = row.Cells["Email_Fornecedor"].ToString();
-            string telefone = row.Cells["Telefone_Fornecedor"].ToString();
-            // CNPJ é ignorado
+            string nome = row.Cells["Nome_Fornecedor"].Value?.ToString();
+            string email = row.Cells["Email_Fornecedor"].Value?.ToString();
+            string telefone = row.Cells["Telefone_Fornecedor"].Value?.ToString();
 
             editarFornecedor formEditar = new editarFornecedor(id, nome, email, telefone);
             formEditar.ShowDialog();

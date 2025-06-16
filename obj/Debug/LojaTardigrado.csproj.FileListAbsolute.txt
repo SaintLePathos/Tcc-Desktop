@@ -144,3 +144,4 @@ C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.csproj.CopyCompl
 C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.exe
 C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.pdb
 C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.editarProduto.resources
+C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.editarFornecedor.resources

@@ -32,7 +32,7 @@ namespace LojaTardigrado
         {
             string nome = txtNome.Text.Trim();
             string email = txtEmail.Text.Trim();
-            string telefone = txtTelefone.Text.Trim();
+            string telefone = txtTelefone.Text.Trim().Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "").Trim(); ;
 
             if (string.IsNullOrWhiteSpace(nome) ||
                 string.IsNullOrWhiteSpace(email) ||
