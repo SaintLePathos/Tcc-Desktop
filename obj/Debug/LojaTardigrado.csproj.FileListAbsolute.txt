@@ -87,7 +87,6 @@ C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.csproj.AssemblyReference.cache
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Form4.resources
-C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Form8.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Properties.Resources.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Relatorioperiodo.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.csproj.GenerateResource.cache
@@ -145,3 +144,6 @@ C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.exe
 C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.pdb
 C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.editarProduto.resources
 C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.editarFornecedor.resources
+C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.editarFornecedor.resources
+C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.editarProduto.resources
+C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Metricasresumo.resources

@@ -275,7 +275,8 @@ namespace LojaTardigrado
                 iTextSharp.text.Font fontInvoice = new iTextSharp.text.Font(bf, 20, iTextSharp.text.Font.NORMAL);
 
                 // Cria um parágrafo com título centralizado
-                Paragraph paragraph = new Paragraph("Desempenho do Meses", fontInvoice);
+                String numped = Valores.idped;
+                Paragraph paragraph = new Paragraph("Conteudo do Pedido Nº" + numped, fontInvoice);
                 paragraph.Alignment = Element.ALIGN_CENTER;
                 doc.Add(paragraph);
 
@@ -381,7 +382,7 @@ namespace LojaTardigrado
 
                 // Cria um parágrafo com título centralizado
                 String numped = Valores.idped;
-                Paragraph paragraph = new Paragraph("Conteudo do Pedido Nº"+numped, fontInvoice);
+                Paragraph paragraph = new Paragraph("Dados do Pedido Nº"+numped, fontInvoice);
                 paragraph.Alignment = Element.ALIGN_CENTER;
                 doc.Add(paragraph);
 

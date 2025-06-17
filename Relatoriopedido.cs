@@ -54,6 +54,16 @@ namespace LojaTardigrado
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.RowHeadersVisible = false; // Esconde o ponteiro do grid
             dataGridView1.ReadOnly = true;
+            dataGridView1.BorderStyle = BorderStyle.None;
+
+            // Evitar que células ou linhas sejam selecionadas
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dataGridView1.MultiSelect = false;
+
+            // Limpar qualquer seleção que ocorra
+            dataGridView1.SelectionChanged += (s, e) => dataGridView1.ClearSelection();
+
+            //dataGridView1.Enabled = false;
 
             // Permite personalizar o grid
             dataGridView1.AutoGenerateColumns = false;
@@ -67,12 +77,13 @@ namespace LojaTardigrado
             dataGridView1.AllowUserToResizeColumns = true;
 
             // Alteração da cor das linhas alternadas no grid
-            dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue; // Alterado para azul claro
+            dataGridView1.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 8, FontStyle.Bold);
+
+            dataGridView1.BackgroundColor = ColorTranslator.FromHtml("#E9E7F4");
 
             // Personalização do cabeçalho das colunas
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Arial", 8, FontStyle.Bold);
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             // Ajustando o alinhamento de texto

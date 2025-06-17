@@ -87,6 +87,7 @@ namespace LojaTardigrado
             // 
             this.txtbSenha.Location = new System.Drawing.Point(106, 105);
             this.txtbSenha.Name = "txtbSenha";
+            this.txtbSenha.PasswordChar = '*';
             this.txtbSenha.Size = new System.Drawing.Size(277, 20);
             this.txtbSenha.TabIndex = 4;
             // 
@@ -103,6 +104,7 @@ namespace LojaTardigrado
             // 
             this.txtbConfirmasenha.Location = new System.Drawing.Point(106, 131);
             this.txtbConfirmasenha.Name = "txtbConfirmasenha";
+            this.txtbConfirmasenha.PasswordChar = '*';
             this.txtbConfirmasenha.Size = new System.Drawing.Size(277, 20);
             this.txtbConfirmasenha.TabIndex = 6;
             // 

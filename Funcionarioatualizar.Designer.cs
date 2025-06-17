@@ -88,6 +88,7 @@ namespace LojaTardigrado
             this.txtbConfirmasenha.Name = "txtbConfirmasenha";
             this.txtbConfirmasenha.Size = new System.Drawing.Size(277, 20);
             this.txtbConfirmasenha.TabIndex = 18;
+            this.txtbConfirmasenha.Text = "*";
             // 
             // label3
             // 
@@ -104,6 +105,7 @@ namespace LojaTardigrado
             this.txtbSenha.Name = "txtbSenha";
             this.txtbSenha.Size = new System.Drawing.Size(277, 20);
             this.txtbSenha.TabIndex = 16;
+            this.txtbSenha.Text = "*";
             // 
             // label2
             // 

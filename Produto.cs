@@ -308,7 +308,7 @@ namespace LojaTardigrado
                 conteudo.Headers.ContentType = MediaTypeHeaderValue.Parse(contentType);
                 form.Add(conteudo, "file", Path.GetFileName(caminhoLocal));
 
-                string url = "http://192.168.0.75/Tcc-Web/Assets/php/upload.php";
+                string url = "http://10.0.0.170/a1/Tcc-Web/Assets/php/upload.php";
 
                 HttpResponseMessage resposta = await client.PostAsync(url, form);
                 string respostaJson = await resposta.Content.ReadAsStringAsync();

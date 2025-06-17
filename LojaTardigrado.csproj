@@ -103,6 +103,12 @@
     <Compile Include="Logininicio.Designer.cs">
       <DependentUpon>Logininicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metricasresumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metricasresumo.Designer.cs">
+      <DependentUpon>Metricasresumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pedidoconsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logininicio.resx">
       <DependentUpon>Logininicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metricasresumo.resx">
+      <DependentUpon>Metricasresumo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidoconsulta.resx">
       <DependentUpon>Pedidoconsulta.cs</DependentUpon>
