@@ -47,9 +47,10 @@ namespace LojaTardigrado
             // 
             // btnAtualizarcadastro
             // 
-            this.btnAtualizarcadastro.Location = new System.Drawing.Point(351, 247);
+            this.btnAtualizarcadastro.Location = new System.Drawing.Point(468, 304);
+            this.btnAtualizarcadastro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAtualizarcadastro.Name = "btnAtualizarcadastro";
-            this.btnAtualizarcadastro.Size = new System.Drawing.Size(113, 35);
+            this.btnAtualizarcadastro.Size = new System.Drawing.Size(151, 43);
             this.btnAtualizarcadastro.TabIndex = 22;
             this.btnAtualizarcadastro.Text = "Atualizar";
             this.btnAtualizarcadastro.UseVisualStyleBackColor = true;
@@ -59,118 +60,132 @@ namespace LojaTardigrado
             // 
             this.cmbbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbbCargo.FormattingEnabled = true;
-            this.cmbbCargo.Location = new System.Drawing.Point(110, 88);
+            this.cmbbCargo.Location = new System.Drawing.Point(147, 108);
+            this.cmbbCargo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbbCargo.Name = "cmbbCargo";
-            this.cmbbCargo.Size = new System.Drawing.Size(146, 21);
+            this.cmbbCargo.Size = new System.Drawing.Size(193, 24);
             this.cmbbCargo.TabIndex = 21;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(66, 91);
+            this.label5.Location = new System.Drawing.Point(88, 112);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.Size = new System.Drawing.Size(50, 17);
             this.label5.TabIndex = 20;
             this.label5.Text = "Cargo:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 169);
+            this.label4.Location = new System.Drawing.Point(21, 208);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.Size = new System.Drawing.Size(118, 17);
             this.label4.TabIndex = 19;
             this.label4.Text = "Confirmar Senha:";
             // 
             // txtbConfirmasenha
             // 
-            this.txtbConfirmasenha.Location = new System.Drawing.Point(110, 166);
+            this.txtbConfirmasenha.Location = new System.Drawing.Point(147, 204);
+            this.txtbConfirmasenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbConfirmasenha.Name = "txtbConfirmasenha";
-            this.txtbConfirmasenha.Size = new System.Drawing.Size(277, 20);
+            this.txtbConfirmasenha.Size = new System.Drawing.Size(368, 22);
             this.txtbConfirmasenha.TabIndex = 18;
             this.txtbConfirmasenha.Text = "*";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(63, 143);
+            this.label3.Location = new System.Drawing.Point(84, 176);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.Size = new System.Drawing.Size(53, 17);
             this.label3.TabIndex = 17;
             this.label3.Text = "Senha:";
             // 
             // txtbSenha
             // 
-            this.txtbSenha.Location = new System.Drawing.Point(110, 140);
+            this.txtbSenha.Location = new System.Drawing.Point(147, 172);
+            this.txtbSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbSenha.Name = "txtbSenha";
-            this.txtbSenha.Size = new System.Drawing.Size(277, 20);
+            this.txtbSenha.Size = new System.Drawing.Size(368, 22);
             this.txtbSenha.TabIndex = 16;
             this.txtbSenha.Text = "*";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 117);
+            this.label2.Location = new System.Drawing.Point(77, 144);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 15;
             this.label2.Text = "Usuario:";
             // 
             // txtbUsuario
             // 
-            this.txtbUsuario.Location = new System.Drawing.Point(110, 114);
+            this.txtbUsuario.Location = new System.Drawing.Point(147, 140);
+            this.txtbUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbUsuario.Name = "txtbUsuario";
-            this.txtbUsuario.Size = new System.Drawing.Size(277, 20);
+            this.txtbUsuario.Size = new System.Drawing.Size(368, 22);
             this.txtbUsuario.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 65);
+            this.label1.Location = new System.Drawing.Point(88, 80);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 13;
             this.label1.Text = "Nome:";
             // 
             // txtbNome
             // 
-            this.txtbNome.Location = new System.Drawing.Point(110, 62);
+            this.txtbNome.Location = new System.Drawing.Point(147, 76);
+            this.txtbNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbNome.Name = "txtbNome";
-            this.txtbNome.Size = new System.Drawing.Size(277, 20);
+            this.txtbNome.Size = new System.Drawing.Size(368, 22);
             this.txtbNome.TabIndex = 12;
             // 
             // cmbbStatus
             // 
             this.cmbbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbbStatus.FormattingEnabled = true;
-            this.cmbbStatus.Location = new System.Drawing.Point(110, 192);
+            this.cmbbStatus.Location = new System.Drawing.Point(147, 236);
+            this.cmbbStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbbStatus.Name = "cmbbStatus";
-            this.cmbbStatus.Size = new System.Drawing.Size(146, 21);
+            this.cmbbStatus.Size = new System.Drawing.Size(193, 24);
             this.cmbbStatus.TabIndex = 23;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 195);
+            this.label6.Location = new System.Drawing.Point(21, 240);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 13);
+            this.label6.Size = new System.Drawing.Size(117, 17);
             this.label6.TabIndex = 24;
             this.label6.Text = "Estado da Conta:";
             // 
             // lblFuncionarionum
             // 
             this.lblFuncionarionum.AutoSize = true;
-            this.lblFuncionarionum.Location = new System.Drawing.Point(139, 24);
+            this.lblFuncionarionum.Location = new System.Drawing.Point(185, 30);
+            this.lblFuncionarionum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFuncionarionum.Name = "lblFuncionarionum";
-            this.lblFuncionarionum.Size = new System.Drawing.Size(166, 13);
+            this.lblFuncionarionum.Size = new System.Drawing.Size(223, 17);
             this.lblFuncionarionum.TabIndex = 25;
             this.lblFuncionarionum.Text = "Atualizar Cadastro Funcionario nº ";
             // 
             // Funcionarioatualizar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 294);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ClientSize = new System.Drawing.Size(635, 362);
             this.Controls.Add(this.lblFuncionarionum);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbbStatus);
@@ -185,6 +200,7 @@ namespace LojaTardigrado
             this.Controls.Add(this.txtbUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtbNome);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Funcionarioatualizar";
             this.Text = "Funcionarioatualizar";
             this.ResumeLayout(false);

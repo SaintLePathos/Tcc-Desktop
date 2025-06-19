@@ -53,8 +53,8 @@ namespace LojaTardigrado
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.metricasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.resumoSemanalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -64,6 +64,7 @@ namespace LojaTardigrado
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.acessoToolStripMenuItem,
             this.funcionariosToolStripMenuItem,
@@ -75,7 +76,7 @@ namespace LojaTardigrado
             this.metricasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(659, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(879, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -85,20 +86,20 @@ namespace LojaTardigrado
             this.adminToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.acessoToolStripMenuItem.Name = "acessoToolStripMenuItem";
-            this.acessoToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.acessoToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.acessoToolStripMenuItem.Text = "Acesso";
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
             this.adminToolStripMenuItem.Text = "Informações de Login";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -108,20 +109,20 @@ namespace LojaTardigrado
             this.cadastrarNovoFuncionarioToolStripMenuItem,
             this.gerenciarToolStripMenuItem1});
             this.funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
-            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.funcionariosToolStripMenuItem.Text = "Funcionarios";
             // 
             // cadastrarNovoFuncionarioToolStripMenuItem
             // 
             this.cadastrarNovoFuncionarioToolStripMenuItem.Name = "cadastrarNovoFuncionarioToolStripMenuItem";
-            this.cadastrarNovoFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarNovoFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.cadastrarNovoFuncionarioToolStripMenuItem.Text = "Novo Funcionario";
             this.cadastrarNovoFuncionarioToolStripMenuItem.Click += new System.EventHandler(this.cadastrarNovoFuncionarioToolStripMenuItem_Click);
             // 
             // gerenciarToolStripMenuItem1
             // 
             this.gerenciarToolStripMenuItem1.Name = "gerenciarToolStripMenuItem1";
-            this.gerenciarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.gerenciarToolStripMenuItem1.Size = new System.Drawing.Size(209, 26);
             this.gerenciarToolStripMenuItem1.Text = "Consultar";
             this.gerenciarToolStripMenuItem1.Click += new System.EventHandler(this.gerenciarToolStripMenuItem1_Click);
             // 
@@ -131,20 +132,20 @@ namespace LojaTardigrado
             this.conToolStripMenuItem,
             this.gerenciarToolStripMenuItem});
             this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.pedidosToolStripMenuItem.Text = "Pedidos";
             // 
             // conToolStripMenuItem
             // 
             this.conToolStripMenuItem.Name = "conToolStripMenuItem";
-            this.conToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.conToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
             this.conToolStripMenuItem.Text = "Consultar";
             this.conToolStripMenuItem.Click += new System.EventHandler(this.conToolStripMenuItem_Click);
             // 
             // gerenciarToolStripMenuItem
             // 
             this.gerenciarToolStripMenuItem.Name = "gerenciarToolStripMenuItem";
-            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
             this.gerenciarToolStripMenuItem.Text = "Gerenciar";
             this.gerenciarToolStripMenuItem.Click += new System.EventHandler(this.gerenciarToolStripMenuItem_Click);
             // 
@@ -153,13 +154,13 @@ namespace LojaTardigrado
             this.produtosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarProdutoToolStripMenuItem});
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.produtosToolStripMenuItem.Text = "Produtos";
             // 
             // cadastrarProdutoToolStripMenuItem
             // 
             this.cadastrarProdutoToolStripMenuItem.Name = "cadastrarProdutoToolStripMenuItem";
-            this.cadastrarProdutoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarProdutoToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.cadastrarProdutoToolStripMenuItem.Text = "Cadastrar Produto";
             this.cadastrarProdutoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarProdutoToolStripMenuItem_Click);
             // 
@@ -168,13 +169,13 @@ namespace LojaTardigrado
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultarToolStripMenuItem1});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // consultarToolStripMenuItem1
             // 
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(154, 26);
             this.consultarToolStripMenuItem1.Text = "Consultar";
             this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
@@ -183,13 +184,13 @@ namespace LojaTardigrado
             this.fornecedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroDeFornecedorToolStripMenuItem});
             this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
             // 
             // cadastroDeFornecedorToolStripMenuItem
             // 
             this.cadastroDeFornecedorToolStripMenuItem.Name = "cadastroDeFornecedorToolStripMenuItem";
-            this.cadastroDeFornecedorToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.cadastroDeFornecedorToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
             this.cadastroDeFornecedorToolStripMenuItem.Text = "Cadastro de Fornecedor";
             this.cadastroDeFornecedorToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeFornecedorToolStripMenuItem_Click);
             // 
@@ -201,34 +202,34 @@ namespace LojaTardigrado
             this.produtoToolStripMenuItem,
             this.pedidosToolStripMenuItem1});
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
-            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
             this.relatoriosToolStripMenuItem.Text = "Relatorios";
             // 
             // periodoToolStripMenuItem
             // 
             this.periodoToolStripMenuItem.Name = "periodoToolStripMenuItem";
-            this.periodoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.periodoToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.periodoToolStripMenuItem.Text = "Periodo";
             this.periodoToolStripMenuItem.Click += new System.EventHandler(this.periodoToolStripMenuItem_Click);
             // 
             // regionalToolStripMenuItem
             // 
             this.regionalToolStripMenuItem.Name = "regionalToolStripMenuItem";
-            this.regionalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.regionalToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.regionalToolStripMenuItem.Text = "Regional";
             this.regionalToolStripMenuItem.Click += new System.EventHandler(this.regionalToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.produtoToolStripMenuItem.Text = "Produtos";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
             // pedidosToolStripMenuItem1
             // 
             this.pedidosToolStripMenuItem1.Name = "pedidosToolStripMenuItem1";
-            this.pedidosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pedidosToolStripMenuItem1.Size = new System.Drawing.Size(151, 26);
             this.pedidosToolStripMenuItem1.Text = "Pedidos";
             this.pedidosToolStripMenuItem1.Click += new System.EventHandler(this.pedidosToolStripMenuItem1_Click);
             // 
@@ -237,28 +238,29 @@ namespace LojaTardigrado
             this.metricasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.resumoSemanalToolStripMenuItem});
             this.metricasToolStripMenuItem.Name = "metricasToolStripMenuItem";
-            this.metricasToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.metricasToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.metricasToolStripMenuItem.Text = "Metricas";
+            // 
+            // resumoSemanalToolStripMenuItem
+            // 
+            this.resumoSemanalToolStripMenuItem.Name = "resumoSemanalToolStripMenuItem";
+            this.resumoSemanalToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.resumoSemanalToolStripMenuItem.Text = "Resumo Semanal";
+            this.resumoSemanalToolStripMenuItem.Click += new System.EventHandler(this.resumoSemanalToolStripMenuItem_Click);
             // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // resumoSemanalToolStripMenuItem
-            // 
-            this.resumoSemanalToolStripMenuItem.Name = "resumoSemanalToolStripMenuItem";
-            this.resumoSemanalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.resumoSemanalToolStripMenuItem.Text = "Resumo Semanal";
-            this.resumoSemanalToolStripMenuItem.Click += new System.EventHandler(this.resumoSemanalToolStripMenuItem_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::LojaTardigrado.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(33, 301);
+            this.pictureBox2.Location = new System.Drawing.Point(232, 165);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(274, 103);
+            this.pictureBox2.Size = new System.Drawing.Size(365, 127);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -267,24 +269,26 @@ namespace LojaTardigrado
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::LojaTardigrado.Properties.Resources.footer_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(215, 333);
+            this.pictureBox1.Location = new System.Drawing.Point(139, 300);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(432, 58);
+            this.pictureBox1.Size = new System.Drawing.Size(576, 71);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(231)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(659, 403);
+            this.ClientSize = new System.Drawing.Size(879, 496);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Inicio";
             this.Text = "Tartigrado Manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

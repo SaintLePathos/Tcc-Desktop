@@ -40,43 +40,48 @@ namespace LojaTardigrado
             // 
             // txtbUsuario
             // 
-            this.txtbUsuario.Location = new System.Drawing.Point(67, 93);
+            this.txtbUsuario.Location = new System.Drawing.Point(89, 114);
+            this.txtbUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbUsuario.Name = "txtbUsuario";
-            this.txtbUsuario.Size = new System.Drawing.Size(348, 20);
+            this.txtbUsuario.Size = new System.Drawing.Size(463, 22);
             this.txtbUsuario.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 96);
+            this.label1.Location = new System.Drawing.Point(16, 118);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuario: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 135);
+            this.label2.Location = new System.Drawing.Point(16, 166);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(57, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Senha: ";
             // 
             // txtbSenha
             // 
-            this.txtbSenha.Location = new System.Drawing.Point(67, 132);
+            this.txtbSenha.Location = new System.Drawing.Point(89, 162);
+            this.txtbSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbSenha.Name = "txtbSenha";
             this.txtbSenha.PasswordChar = '*';
-            this.txtbSenha.Size = new System.Drawing.Size(348, 20);
+            this.txtbSenha.Size = new System.Drawing.Size(463, 22);
             this.txtbSenha.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LojaTardigrado.Properties.Resources.footer_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(403, 66);
+            this.pictureBox1.Size = new System.Drawing.Size(537, 81);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -87,9 +92,10 @@ namespace LojaTardigrado
             this.btnAcessar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcessar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcessar.ForeColor = System.Drawing.Color.White;
-            this.btnAcessar.Location = new System.Drawing.Point(319, 170);
+            this.btnAcessar.Location = new System.Drawing.Point(425, 209);
+            this.btnAcessar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAcessar.Name = "btnAcessar";
-            this.btnAcessar.Size = new System.Drawing.Size(96, 34);
+            this.btnAcessar.Size = new System.Drawing.Size(128, 42);
             this.btnAcessar.TabIndex = 5;
             this.btnAcessar.Text = "Acessar";
             this.btnAcessar.UseVisualStyleBackColor = false;
@@ -97,10 +103,10 @@ namespace LojaTardigrado
             // 
             // Logininicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(427, 233);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(231)))), ((int)(((byte)(244)))));
+            this.ClientSize = new System.Drawing.Size(569, 287);
             this.Controls.Add(this.btnAcessar);
             this.Controls.Add(this.txtbUsuario);
             this.Controls.Add(this.label1);
@@ -108,6 +114,7 @@ namespace LojaTardigrado
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Logininicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -42,6 +42,12 @@ namespace LojaTardigrado
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dgvFornecedores = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +75,7 @@ namespace LojaTardigrado
             // 
             // txtTelefoneFornecedor
             // 
-            this.txtTelefoneFornecedor.Location = new System.Drawing.Point(320, 230);
+            this.txtTelefoneFornecedor.Location = new System.Drawing.Point(319, 230);
             this.txtTelefoneFornecedor.Mask = "(00) 00000-0000";
             this.txtTelefoneFornecedor.Name = "txtTelefoneFornecedor";
             this.txtTelefoneFornecedor.Size = new System.Drawing.Size(180, 30);
@@ -143,7 +149,7 @@ namespace LojaTardigrado
             this.dgvFornecedores.AllowUserToDeleteRows = false;
             this.dgvFornecedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFornecedores.ColumnHeadersHeight = 29;
-            this.dgvFornecedores.Location = new System.Drawing.Point(97, 309);
+            this.dgvFornecedores.Location = new System.Drawing.Point(97, 330);
             this.dgvFornecedores.Name = "dgvFornecedores";
             this.dgvFornecedores.ReadOnly = true;
             this.dgvFornecedores.RowHeadersWidth = 51;
@@ -164,12 +170,66 @@ namespace LojaTardigrado
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(542, 140);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(180, 30);
+            this.textBox3.TabIndex = 25;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(97, 294);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(180, 30);
+            this.textBox2.TabIndex = 24;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(542, 227);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(180, 30);
+            this.textBox1.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(538, 110);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(118, 23);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "nome contato";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(93, 263);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 23);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "endereço";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(538, 200);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 23);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "razão social";
+            // 
             // Fornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(800, 611);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvFornecedores);
             this.Controls.Add(this.lblITitulo);
@@ -206,5 +266,11 @@ namespace LojaTardigrado
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.DataGridView dgvFornecedores;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -67,7 +67,7 @@ namespace LojaTardigrado
 
         private void cadastrarProdutoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            trocaform(new Form4());
+            trocaform(new Produto());
         }
 
         private void cadastroDeFornecedorToolStripMenuItem_Click(object sender, EventArgs e)

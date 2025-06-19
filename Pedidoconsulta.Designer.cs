@@ -62,7 +62,7 @@ namespace LojaTardigrado
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 15);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -77,7 +77,7 @@ namespace LojaTardigrado
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(546, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(401, 516);
             this.panel1.TabIndex = 1;
@@ -94,7 +94,7 @@ namespace LojaTardigrado
             this.tableLayoutPanel2.Controls.Add(this.btnvoltar, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnConteudo, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 425);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -112,7 +112,7 @@ namespace LojaTardigrado
             this.btnVerprodutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerprodutos.ForeColor = System.Drawing.Color.White;
             this.btnVerprodutos.Location = new System.Drawing.Point(200, 47);
-            this.btnVerprodutos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerprodutos.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerprodutos.Name = "btnVerprodutos";
             this.btnVerprodutos.Size = new System.Drawing.Size(189, 36);
             this.btnVerprodutos.TabIndex = 1;
@@ -130,7 +130,7 @@ namespace LojaTardigrado
             this.btnDadosenvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDadosenvio.ForeColor = System.Drawing.Color.White;
             this.btnDadosenvio.Location = new System.Drawing.Point(4, 4);
-            this.btnDadosenvio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDadosenvio.Margin = new System.Windows.Forms.Padding(4);
             this.btnDadosenvio.Name = "btnDadosenvio";
             this.btnDadosenvio.Size = new System.Drawing.Size(188, 35);
             this.btnDadosenvio.TabIndex = 2;
@@ -148,7 +148,7 @@ namespace LojaTardigrado
             this.btnvoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnvoltar.ForeColor = System.Drawing.Color.White;
             this.btnvoltar.Location = new System.Drawing.Point(4, 47);
-            this.btnvoltar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnvoltar.Margin = new System.Windows.Forms.Padding(4);
             this.btnvoltar.Name = "btnvoltar";
             this.btnvoltar.Size = new System.Drawing.Size(188, 36);
             this.btnvoltar.TabIndex = 3;
@@ -165,7 +165,7 @@ namespace LojaTardigrado
             this.btnConteudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConteudo.ForeColor = System.Drawing.Color.White;
             this.btnConteudo.Location = new System.Drawing.Point(200, 4);
-            this.btnConteudo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConteudo.Margin = new System.Windows.Forms.Padding(4);
             this.btnConteudo.Name = "btnConteudo";
             this.btnConteudo.Size = new System.Drawing.Size(189, 35);
             this.btnConteudo.TabIndex = 4;
@@ -198,7 +198,7 @@ namespace LojaTardigrado
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(4, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(534, 516);
             this.panel2.TabIndex = 2;
@@ -212,7 +212,7 @@ namespace LojaTardigrado
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.ForeColor = System.Drawing.Color.White;
             this.btnPesquisar.Location = new System.Drawing.Point(408, 14);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(123, 36);
             this.btnPesquisar.TabIndex = 3;
@@ -241,7 +241,7 @@ namespace LojaTardigrado
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBox1.Location = new System.Drawing.Point(132, 17);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(290, 23);
             this.textBox1.TabIndex = 1;
@@ -253,7 +253,7 @@ namespace LojaTardigrado
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(4, 62);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(526, 451);
@@ -272,10 +272,10 @@ namespace LojaTardigrado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(231)))), ((int)(((byte)(244)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(956, 554);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pedidoconsulta";
             this.Text = "Pedidoconsulta";
             this.tableLayoutPanel1.ResumeLayout(false);

@@ -12,46 +12,52 @@ using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using System.Runtime.InteropServices;
 
 
 
 namespace LojaTardigrado
 {
-    public partial class Form4 : Form
+    public partial class Produto : Form
     {
-        
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam, string lParam);
+
+        private const int EM_SETCUEBANNER = 0x1501;
 
         ClasseConexao con;
         List<string> caminhosLocaisImagens = new List<string>();
 
 
-        public Form4()
+        public Produto()
         {
             InitializeComponent();
             con = new ClasseConexao();
             ExibirProdutos();
             ExbirFornecedor();
-          
             CarregarCategorias();
-
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
+            radioButton3.Enabled = false;
+            radioButton4.Enabled = false;
+            SendMessage(txtPesquisa.Handle, EM_SETCUEBANNER, 0, "Digite o nome do produto...");
 
         }
         private void CarregarCategorias()
         {
             cmbCategoria.Items.Clear();
-            cmbCategoria.Items.AddRange(new string[] { "Camisa", "Calça", "Tênis" });
+            cmbCategoria.Items.AddRange(new string[] { "Camisa", "Calça"});
             cmbCategoria.SelectedIndex = 0; // Padrão: Camisa
         }
 
 
-       
-
         private Dictionary<string, string[]> tamanhosPorCategoria = new Dictionary<string, string[]>
-{
-    { "Camisa", new[] { "PP", "P", "M", "G", "GG" } },
-    { "Calça", new[] { "36", "38", "40", "42", "44", "46" } },
-    { "Tênis", new[] { "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44" } }
-};
+        {
+            { "Camisa", new[] { "PP", "P", "M", "G", "GG" } },
+            { "Calça", new[] { "36", "38", "40", "42", "44", "46" } }
+   
+        };
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             string categoriaSelecionada = cmbCategoria.SelectedItem.ToString();
@@ -79,7 +85,7 @@ namespace LojaTardigrado
 
 
         }
-        
+
         private void ExbirFornecedor()
         {
 
@@ -102,12 +108,10 @@ namespace LojaTardigrado
             }
         }
 
-     
-
         private bool CamposValidos()
         {
             return !string.IsNullOrWhiteSpace(txtDescricao.Text) &&
-                   !string.IsNullOrWhiteSpace(txtNomeProduto.Text) &&
+                   !string.IsNullOrWhiteSpace(textBox1.Text) &&
                    !string.IsNullOrWhiteSpace(txtPreco.Text) &&
                    !string.IsNullOrWhiteSpace(txtQuantidade.Text) &&
                    !string.IsNullOrWhiteSpace(txtTecido.Text) &&
@@ -118,8 +122,8 @@ namespace LojaTardigrado
         }
         private void LimparCampos()
         {
-            txtNomeProduto.Clear();
-            txtDescricao.Clear();
+            textBox1.Text = "";
+            txtDescricao.Text = "";
             txtCusto.Clear();
             txtPreco.Clear();
             txtQuantidade.Clear();
@@ -154,7 +158,7 @@ namespace LojaTardigrado
 
                 try
                 {
-                    string nomeProduto = txtNomeProduto.Text.Trim();
+                    string nomeProduto = textBox1.Text.Trim();
                     string descricao = txtDescricao.Text.Trim();
                     decimal preco = decimal.Parse(txtPreco.Text);
                     int quantidade = int.Parse(txtQuantidade.Text);
@@ -177,7 +181,7 @@ namespace LojaTardigrado
 
                     int idFornecedor = Convert.ToInt32(dtFornecedor.Rows[0]["Id_Fornecedor"]);
 
-                SqlCommand cmdInsert = new SqlCommand(@"
+                    SqlCommand cmdInsert = new SqlCommand(@"
                     INSERT INTO Produto 
                     (Id_Fornecedor, Nome_Produto, Descricao_Produto, Valor_Produto, 
                      Tamanho_Produto, Quantidade_Produto, Tecido_Produto, Cor_Produto, Custo_Produto)
@@ -197,7 +201,7 @@ namespace LojaTardigrado
                     cmdInsert.Parameters.AddWithValue("@tecido", tecido);
                     cmdInsert.Parameters.AddWithValue("@cor", cor);
                     cmdInsert.Parameters.AddWithValue("@custo", custo);
-                    
+
 
 
                     object novoIdObj = con.executarScalar(cmdInsert);
@@ -239,6 +243,7 @@ namespace LojaTardigrado
                         LimparCampos();
                         MessageBox.Show("Produto e imagens inseridos com sucesso!");
                         ExibirProdutos();
+                        LimparImagem();
                     }
                     else
                     {
@@ -256,6 +261,20 @@ namespace LojaTardigrado
             }
         }
 
+        private void LimparImagem()
+        {
+            pictureBox1.Image = null;
+            caminhosLocaisImagens.Clear();
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
+            radioButton3.Enabled = false;
+            radioButton4.Enabled = false;
+        }
 
         private void btnSelecionarImagem_Click(object sender, EventArgs e)
         {
@@ -273,13 +292,19 @@ namespace LojaTardigrado
 
                 caminhosLocaisImagens.Clear();
                 caminhosLocaisImagens.AddRange(ofd.FileNames);
+
+                radioButton1.Enabled = caminhosLocaisImagens.Count > 0;
+                radioButton2.Enabled = caminhosLocaisImagens.Count > 1;
+                radioButton3.Enabled = caminhosLocaisImagens.Count > 2;
+                radioButton4.Enabled = caminhosLocaisImagens.Count > 3;
+
+                // Marcar o primeiro como padrão
+                if (radioButton1.Enabled)
+                    radioButton1.Checked = true;
+
                 MessageBox.Show("Imagens selecionadas. Elas serão enviadas ao adicionar o produto.");
             }
         }
-
-
-
-
 
         private async Task<string> EnviarImagemParaServidor(string caminhoLocal)
         {
@@ -308,7 +333,7 @@ namespace LojaTardigrado
                 conteudo.Headers.ContentType = MediaTypeHeaderValue.Parse(contentType);
                 form.Add(conteudo, "file", Path.GetFileName(caminhoLocal));
 
-                string url = "http://10.0.0.170/a1/Tcc-Web/Assets/php/upload.php";
+                string url = "http://192.168.0.75/Tcc-Web/Assets/php/uploadImgProduto.php";
 
                 HttpResponseMessage resposta = await client.PostAsync(url, form);
                 string respostaJson = await resposta.Content.ReadAsStringAsync();
@@ -345,20 +370,20 @@ namespace LojaTardigrado
             string cor = linha.Cells["Cor_Produto"].Value.ToString();
             decimal custo = Convert.ToDecimal(linha.Cells["Custo_Produto"].Value);
             string tamanho = linha.Cells["Tamanho_Produto"].Value.ToString();
+            int desconto = Convert.ToInt32(linha.Cells["Desconto_Produto"].Value);
+            string categoria = cmbCategoria.Text;
 
             // Buscar nome do fornecedor (se só tiver Id no grid)
             int idFornecedor = Convert.ToInt32(linha.Cells["Id_Fornecedor"].Value);
             string fornecedor = BuscarNomeFornecedorPorId(idFornecedor);
 
-            editarProduto formEditar = new editarProduto(idProduto, nomeProduto, descricao, preco, quantidade, tecido, cor, custo, tamanho, fornecedor);
+            editarProduto formEditar = new editarProduto(idProduto, nomeProduto, descricao, preco, quantidade, tecido, cor, custo, tamanho, fornecedor, categoria,desconto);
             formEditar.ShowDialog();
 
             // Depois que fechar o formEditar, atualize a lista:
             ExibirProdutos();
 
-
         }
-
 
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -440,7 +465,6 @@ namespace LojaTardigrado
             }
         }
 
-
         private void txtPreco_TextChanged(object sender, EventArgs e)
         {
             if (txtPreco.Text == "") return;
@@ -491,10 +515,141 @@ namespace LojaTardigrado
             txtCusto.SelectionStart = txtCusto.Text.Length;
         }
 
-        private void Form4_Load(object sender, EventArgs e)
+       
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            if (!(sender is RadioButton rb) || !rb.Checked)
+                return;
 
+            int index = -1;
+
+            if (rb == radioButton1) index = 0;
+            else if (rb == radioButton2) index = 1;
+            else if (rb == radioButton3) index = 2;
+            else if (rb == radioButton4) index = 3;
+
+            if (index >= 0 && index < caminhosLocaisImagens.Count)
+            {
+                try
+                {
+                    pictureBox1.Image = Image.FromFile(caminhosLocaisImagens[index]);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao carregar imagem: " + ex.Message);
+                }
+            }
         }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!(sender is RadioButton rb) || !rb.Checked)
+                return;
+
+            int index = -1;
+
+            if (rb == radioButton1) index = 0;
+            else if (rb == radioButton2) index = 1;
+            else if (rb == radioButton3) index = 2;
+            else if (rb == radioButton4) index = 3;
+
+            if (index >= 0 && index < caminhosLocaisImagens.Count)
+            {
+                try
+                {
+                    pictureBox1.Image = Image.FromFile(caminhosLocaisImagens[index]);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao carregar imagem: " + ex.Message);
+                }
+            }
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!(sender is RadioButton rb) || !rb.Checked)
+                return;
+
+            int index = -1;
+
+            if (rb == radioButton1) index = 0;
+            else if (rb == radioButton2) index = 1;
+            else if (rb == radioButton3) index = 2;
+            else if (rb == radioButton4) index = 3;
+
+            if (index >= 0 && index < caminhosLocaisImagens.Count)
+            {
+                try
+                {
+                    pictureBox1.Image = Image.FromFile(caminhosLocaisImagens[index]);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao carregar imagem: " + ex.Message);
+                }
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!(sender is RadioButton rb) || !rb.Checked)
+                return;
+
+            int index = -1;
+
+            if (rb == radioButton1) index = 0;
+            else if (rb == radioButton2) index = 1;
+            else if (rb == radioButton3) index = 2;
+            else if (rb == radioButton4) index = 3;
+
+            if (index >= 0 && index < caminhosLocaisImagens.Count)
+            {
+                try
+                {
+                    pictureBox1.Image = Image.FromFile(caminhosLocaisImagens[index]);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao carregar imagem: " + ex.Message);
+                }
+            }
+        }
+
+
+        private void txtPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string palavra = txtPesquisa.Text.Trim();
+                if (!string.IsNullOrEmpty(palavra))
+                {
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM Produto WHERE Nome_Produto LIKE @nome");
+                        cmd.Parameters.AddWithValue("@nome", "%" + palavra + "%");
+
+                        DataTable dt = con.exSQLParametros(cmd);
+                        dataGridView1.DataSource = dt;
+
+                        txtPesquisa.Text = "";
+
+                        e.Handled = true;
+                        e.SuppressKeyPress = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro na pesquisa: " + ex.Message);
+                    }
+
+                }
+
+            }
+        }
+
     }
 }
 

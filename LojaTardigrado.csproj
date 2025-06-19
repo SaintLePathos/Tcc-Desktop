@@ -165,6 +165,9 @@
     <Compile Include="Relatorioregiao.Designer.cs">
       <DependentUpon>Relatorioregiao.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoundedTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Valores.cs" />
     <EmbeddedResource Include="Clienteconsulta.resx">
       <DependentUpon>Clienteconsulta.cs</DependentUpon>

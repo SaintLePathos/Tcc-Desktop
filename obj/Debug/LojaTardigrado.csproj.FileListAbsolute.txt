@@ -130,7 +130,6 @@ C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.Logininicio.reso
 C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.Pedidoconsulta.resources
 C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.Pedidogerenciamento.resources
 C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.Pedidoproduto.resources
-C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.Form4.resources
 C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.Fornecedor.resources
 C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.Properties.Resources.resources
 C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.Relatoriopedido.resources
@@ -147,3 +146,5 @@ C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.editarFornecedor
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.editarFornecedor.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.editarProduto.resources
 C:\Users\Intel\Desktop\tccdesktop\Tcc-Desktop\obj\Debug\LojaTardigrado.Metricasresumo.resources
+C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.Metricasresumo.resources
+C:\Users\Douglas\Downloads\Tcc-Desktop\obj\Debug\LojaTardigrado.Produto.resources
