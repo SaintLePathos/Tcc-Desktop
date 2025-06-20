@@ -8,6 +8,14 @@ namespace LojaTardigrado
 {
     class Valores
     {
+        private static string _enderecoserver = "10.0.0.170/a1";
+
+        public static string ipserver
+        {
+            get { return _enderecoserver; }
+            //set { _enderecoserver = value; }
+        }
+
         private static string _idpedido;
         public static string idped
         {

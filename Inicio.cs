@@ -155,5 +155,20 @@ namespace LojaTardigrado
         {
             trocaform(new Metricasresumo());
         }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            trocaform(new Fornecedor());
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            trocaform(new Clienteconsulta());
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            trocaform(new Produto());
+        }
     }
 }

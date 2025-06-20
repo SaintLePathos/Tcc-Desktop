@@ -125,7 +125,7 @@ namespace LojaTardigrado
                     string nomeArquivo = row["Url_ImgProduto"].ToString();
 
                     // Constrói a URL completa
-                    string urlCompleta = $"http://192.168.0.75/Tcc-Web/{nomeArquivo}";
+                    string urlCompleta = "http://"+Valores.ipserver+"/Tcc-Web/"+nomeArquivo;
                     listaImagens.Add(urlCompleta);
                 }
 
@@ -344,7 +344,7 @@ namespace LojaTardigrado
                 conteudo.Headers.ContentType = MediaTypeHeaderValue.Parse(contentType);
                 form.Add(conteudo, "file", Path.GetFileName(caminhoLocal));
 
-                string url = "http://192.168.0.75/Tcc-Web/Assets/php/uploadImgProduto.php";
+                string url = "http://"+Valores.ipserver+"/Tcc-Web/Assets/php/uploadImgProduto.php";
 
                 HttpResponseMessage resposta = await client.PostAsync(url, form);
                 string respostaJson = await resposta.Content.ReadAsStringAsync();
@@ -429,7 +429,7 @@ namespace LojaTardigrado
                     }
 
                     // Atualiza imagem na tela
-                    string novaUrlCompleta = $"http://192.168.0.75/Tcc-Web/{novoCaminhoNoServidor}";
+                    string novaUrlCompleta = "http://"+Valores.ipserver+"/Tcc-Web/"+novoCaminhoNoServidor;
                     listaImagens[index] = novaUrlCompleta;
 
                     try
@@ -453,7 +453,7 @@ namespace LojaTardigrado
                 using (HttpClient client = new HttpClient())
                 {
                     // URL do seu endpoint PHP no servidor
-                    string url = "http://192.168.0.75/Tcc-Web/Assets/php/deletarImgProduto.php";
+                    string url = "http://"+Valores.ipserver+"/Tcc-Web/Assets/php/deletarImgProduto.php";
 
                     // Monta o JSON que será enviado
                     var dados = new { imagem = nomeImagem };

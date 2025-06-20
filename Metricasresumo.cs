@@ -21,6 +21,7 @@ namespace LojaTardigrado
         {
             InitializeComponent();
             tudo();
+            /*
             meuTimer = new Timer();
             meuTimer.Interval = 1000; // Executar a cada 2 segundos
             meuTimer.Tick += (s, e) => {
@@ -28,6 +29,7 @@ namespace LojaTardigrado
                 // Chame outros métodos conforme necessário
             };
             meuTimer.Start();
+            */
         }
         private void tudo()
         {
@@ -67,7 +69,7 @@ namespace LojaTardigrado
             dataGridView1.ClearSelection();
 
             dataGridView1.DataSource = dt;
-            dataGridView1.Columns[0].Visible = true; // esconde a coluna 0
+            //dataGridView1.Columns[0].Visible = true; // esconde a coluna 0
             dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dataGridView1.AllowUserToAddRows = false; // Esconde a nova linha do grid
             dataGridView1.AllowUserToDeleteRows = false;
